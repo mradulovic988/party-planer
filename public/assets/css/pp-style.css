@@ -24,17 +24,23 @@
     margin: 10px 0 10px 0;
 }
 
+.pp-m-tb-20 {
+    margin: 20px 0 20px 0;
+}
+
 .pp-m-lr-10 {
     margin: 0 10px 0 10px;
+}
+
+.pp-w-100 {
+    width: 100px;
 }
 
 /* End Structure */
 
 /* Design */
-p, span, h1, h2, h3, h4, h5, h6 {
-    font-size: inherit;
-    font-weight: inherit;
-    font-family: inherit;
+.pp-inline-flex {
+    display: inline-flex;
 }
 
 .pp-title {
@@ -60,5 +66,27 @@ p, span, h1, h2, h3, h4, h5, h6 {
 
 select.pp-select-width {
     padding: 10px 30px;
+}
+
+table.pp-table {
+    width: 50%;
+    border-collapse: collapse;
+}
+
+table.pp-table, table.pp-table tr, table.pp-table td, table.pp-table th {
+    border: none;
+    text-align: left;
+}
+
+.pp-advance-option-wrapper {
+    text-align: center;
+}
+
+button.pp-advance-option:after {
+    content: "    ⬇";
+}
+
+.pp-advanced-section {
+    display: none;
 }
 /* End design */
