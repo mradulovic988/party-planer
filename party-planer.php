@@ -17,11 +17,26 @@
  * Author:            Marko Radulovic
  * Author URI:        https://mlab-studio.com/
  * Text Domain:       party-planer
- * Domain Path:       /languages
  * License:           GPL v3 or later
  * License URI:       http://www.gnu.org/licenses/gpl-3.0.txt
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
+}
+
+if ( ! class_exists( 'Party_Planer' ) ) {
+	class Party_Planer {
+		public function __construct() {
+
+			if ( ! defined( 'PARTY_PLANER_PATH' ) ) {
+				define( 'PARTY_PLANER_PATH', plugin_dir_path( __FILE__ ) );
+			}
+
+			include PARTY_PLANER_PATH . '/config/class-pp-config.php';
+			PP_Config::pp_instance();
+		}
+	}
+
+	new Party_Planer();
 }
