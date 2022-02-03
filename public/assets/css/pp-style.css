@@ -1,0 +1,64 @@
+/* Structure */
+.pp-row {
+    width: 100%;
+    display: inline-flex;
+}
+
+.pp-col-50 {
+    width: 50%;
+}
+
+.pp-p-20 {
+    padding: 20px;
+}
+
+.pp-p-10 {
+    padding: 10px;
+}
+
+.pp-m-20 {
+    margin: 20px;
+}
+
+.pp-m-tb-10 {
+    margin: 10px 0 10px 0;
+}
+
+.pp-m-lr-10 {
+    margin: 0 10px 0 10px;
+}
+
+/* End Structure */
+
+/* Design */
+p, span, h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+    font-family: inherit;
+}
+
+.pp-title {
+    font-size: inherit;
+    margin-left: 20px;
+    position: relative;
+    top: 7px;
+}
+
+.pp-fields {
+    width: 90%;
+    margin: 10px auto;
+}
+
+.pp-title-wrapper {
+    display: inline-flex;
+}
+
+.pp-dot {
+    width: 40px;
+    height: 40px;
+}
+
+select.pp-select-width {
+    padding: 10px 30px;
+}
+/* End design */
