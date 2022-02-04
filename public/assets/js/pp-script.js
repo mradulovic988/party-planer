@@ -12,8 +12,10 @@ const basicBtn = {
         if (this.btn) {
             this.btn.addEventListener('click', () => {
                 if (this.advSection.style.display === 'block') {
+                    this.btn.textContent = 'Napredne opcije    ⇩';
                     return this.advSection.style.display = 'none';
                 } else {
+                    this.btn.textContent = 'Napredne opcije    ⇧';
                     return this.advSection.style.display = 'block';
                 }
             });
