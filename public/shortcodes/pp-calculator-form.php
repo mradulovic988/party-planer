@@ -5,6 +5,7 @@ if ( ! function_exists( 'pp_calculator_form' ) ) {
 	function pp_calculator_form() {
 		return '
 		<form action="" method="post" id="pp-calculator-form">
+		' . wp_nonce_field( 'pp_calculator_save', 'pp_calculator_name' ) . '
 			<div class="pp-basic-section">
 	            <div class="pp-row">
 	                <div class="pp-col-50 pp-p-20">
@@ -13,19 +14,11 @@ if ( ! function_exists( 'pp_calculator_form' ) ) {
 	                        <h4 class="pp-title">' . __( 'BROJ GOSTIJU', PARTY_PLANER_TEXT_DOMAIN ) . '</h4>
 	                    </div>
 	                    <div class="pp-fields pp-m-tb-10">
-	                        <select name="pp-alc-guests-number" id="pp-alc-guests-number" class="pp-select-width pp-alc-guests-number">
-	                            <option value="1">1</option>
-	                            <option value="2">2</option>
-	                            <option value="3">3</option>
-	                        </select>
+	                        <input class="pp-w-100" type="number" name="pp-alc-guests-number" id="pp-alc-guests-number">
 	                        <label for="pp-alc-guests-number" class="pp-m-lr-10">' . __( 'Broj gostiju koji konzumira alkohol', PARTY_PLANER_TEXT_DOMAIN ) . '</label>
 	                    </div>
 	                    <div class="pp-fields pp-m-tb-10">
-	                        <select name="pp-non-alc-guests-number" id="pp-non-alc-guests-number" class="pp-select-width pp-non-alc-guests-number">
-	                            <option value="1">1</option>
-	                            <option value="2">2</option>
-	                            <option value="3">3</option>
-	                        </select>
+	                        <input class="pp-w-100" type="number" name="pp-non-alc-guests-number" id="pp-non-alc-guests-number">
 	                        <label for="pp-non-alc-guests-number" class="pp-m-lr-10">' . __( 'Broj gostiju koji ne konzumira alkohol', PARTY_PLANER_TEXT_DOMAIN ) . '</label>
 	                    </div>
 	                </div>
@@ -36,7 +29,7 @@ if ( ! function_exists( 'pp_calculator_form' ) ) {
 	                        <h4 class="pp-title">' . __( 'TRAJANJE PROSLAVE', PARTY_PLANER_TEXT_DOMAIN ) . '</h4>
 	                    </div>
 	                    <div class="pp-fields pp-m-tb-10">
-	                        <input type="text" name="pp-time-party" class="pp-time-party pp-w-100" id="pp-time-party" placeholder="h">
+	                        <input type="number" name="pp-time-party" class="pp-time-party pp-w-100" id="pp-time-party" placeholder="h">
 	                        <label for="pp-time-party" class="pp-m-lr-10">' . __( '(uneti vreme trajanja proslave)', PARTY_PLANER_TEXT_DOMAIN ) . '</label>
 	                    </div>
 	                </div>
@@ -251,6 +244,34 @@ if ( ! function_exists( 'pp_calculator_form' ) ) {
                 </div>
             </div>
             <div class="pp-advance-option-wrapper pp-m-tb-20">
+            	<div class="pp-additional-information">
+	                <input type="checkbox" name="pp-information" id="pp-information">
+	                <label for="pp-information">' . __( 'Želim da učestvujem u statistici. Pristajem da se moji podaci obrađuju.', PARTY_PLANER_TEXT_DOMAIN ) . '</label>
+	            	    
+                    <div class="pp-col-50 pp-p-20 pp-addition-information-wrapper">
+	                    <div class="pp-fields pp-m-tb-10">
+	                        <table class="pp-table">
+								<tr>
+									<td>' . __( 'Ime: ', PARTY_PLANER_TEXT_DOMAIN ) . '</td>
+									<td><input class="pp-w-300" type="text" name="pp-add-inf-name"></td>
+								</tr>
+								<tr>
+									<td>' . __( 'Prezime: ', PARTY_PLANER_TEXT_DOMAIN ) . '</td>
+									<td><input class="pp-w-300" type="text" name="pp-add-inf-lname"></td>
+								</tr>
+								<tr>
+									<td>' . __( 'Email: ', PARTY_PLANER_TEXT_DOMAIN ) . '</td>
+									<td><input class="pp-w-300" type="email" name="pp-add-inf-email"></td>
+								</tr>
+								<tr>
+									<td>' . __( 'Kontakt telefon: ', PARTY_PLANER_TEXT_DOMAIN ) . '</td>
+									<td><input class="pp-w-300" type="text" name="pp-add-inf-phone"></td>
+								</tr>
+							</table>
+	                    </div>
+	                </div>
+            	</div>
+            	
                 <span class="pp-advance-option">' . __( 'Napredne opcije    ⇩', PARTY_PLANER_TEXT_DOMAIN ) . '</span>
         		<input type="submit" name="pp-party-planer-submit" id="pp-party-planer-submit" value="' . __( 'Računaj', PARTY_PLANER_TEXT_DOMAIN ) . '">
 			</div>

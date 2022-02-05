@@ -36,6 +36,10 @@
     width: 100px;
 }
 
+.pp-w-300 {
+    width: 300px;
+}
+
 /* End Structure */
 
 /* Design */
@@ -106,6 +110,14 @@ table.pp-table, table.pp-table tr, table.pp-table td, table.pp-table th {
 
 .pp-advance-option:after {
     /*content: "    ⬇";*/
+}
+
+.pp-additional-information {
+    text-align: left;
+}
+
+.pp-addition-information-wrapper {
+    display: none;
 }
 
 /* End design */
