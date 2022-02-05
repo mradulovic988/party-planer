@@ -1,53 +1,64 @@
 'use strict';
 
 /**
+ * Data elements for processing
+ *
+ * @type {{alert: {partyTime: *, alc: *, nonAlc: *}, toggle: {advSection: *, advBtn: *, addInfoSection: *, addInfoBtn: *}}}
+ */
+const data = {
+    toggle: {
+        advBtn: document.querySelector('.pp-advance-option'),
+        advSection: document.querySelector('.pp-advanced-section'),
+        addInfoBtn: document.querySelector('#pp-information'),
+        addInfoSection: document.querySelector('.pp-addition-information-wrapper'),
+    },
+    alert: {
+        alc: document.querySelector('#pp-alc-guests-number'),
+        nonAlc: document.querySelector('#pp-non-alc-guests-number'),
+        partyTime: document.querySelector('#pp-time-party'),
+    }
+}
+
+/**
  * Toggle between basic and advanced section on party-planer form
  *
- * @type {{process: basicBtn.process, advSection: *, btn: *}}
+ * @param {Element} b Button element for click
+ * @param {Element} s Section for toggle
  */
-const basicBtn = {
-    advBtn: document.querySelector('.pp-advance-option'),
-    advSection: document.querySelector('.pp-advanced-section'),
-    addInfoBtn: document.querySelector('#pp-information'),
-    addInfoSection: document.querySelector('.pp-addition-information-wrapper'),
-    process: function (b, s) {
-        if (b) {
-            b.addEventListener('click', () => {
-                if (s.style.display === 'block') {
-                    b.textContent = 'Napredne opcije    ⇩';
-                    return s.style.display = 'none';
-                } else {
-                    b.textContent = 'Napredne opcije    ⇧';
-                    return s.style.display = 'block';
-                }
-            });
-        }
+const toggleProcess = (b, s) => {
+    if (b) {
+        b.addEventListener('click', () => {
+            if (s.style.display === 'block') {
+                b.textContent = 'Napredne opcije    ⇩';
+                return s.style.display = 'none';
+            } else {
+                b.textContent = 'Napredne opcije    ⇧';
+                return s.style.display = 'block';
+            }
+        });
     }
-};
-basicBtn?.process(basicBtn?.advBtn, basicBtn?.advSection);
-basicBtn?.process(basicBtn?.addInfoBtn, basicBtn?.addInfoSection);
+}
+toggleProcess(data.toggle.advBtn, data.toggle.advSection);
+toggleProcess(data.toggle.addInfoBtn, data.toggle.addInfoSection);
 
 /**
  * Alert message for specific fields
  *
- * @type {{process: getAlert.process, partyTime: *, alc: *, nonAlc: *}}
+ * @param {Element} e Get field element
+ * @param {int} max Integer for defining rule
+ * @param {string} str String message for alert()
  */
-const getAlert = {
-    alc: document.querySelector('#pp-alc-guests-number'),
-    nonAlc: document.querySelector('#pp-non-alc-guests-number'),
-    partyTime: document.querySelector('#pp-time-party'),
-    process: function (e, max, str) {
-        e.addEventListener('change', () => {
-            let s = e.value;
-            let i = parseInt(s);
+const alertProcess = (e, max, str) => {
+    e.addEventListener('change', () => {
+        let s = e.value;
+        let i = parseInt(s);
 
-            if (i < 0 || i > max) {
-                alert(`Maksimalni broj ${str} je ${max}. Za veći broj ${str} nas kontaktirajte lično. Hvala.`);
-                e.value = '';
-            }
-        });
-    },
-};
-getAlert?.process(getAlert?.alc, 300, 'gostiju');
-getAlert?.process(getAlert?.nonAlc, 300, 'gostiju');
-getAlert?.process(getAlert?.partyTime, 8, 'sati');
+        if (i < 0 || i > max) {
+            alert(`Maksimalni broj ${str} je ${max}. Za veći broj ${str} nas kontaktirajte lično. Hvala.`);
+            e.value = '';
+        }
+    });
+}
+alertProcess(data.alert.alc, 300, 'gostiju');
+alertProcess(data.alert.nonAlc, 300, 'gostiju');
+alertProcess(data.alert.partyTime, 8, 'sati');

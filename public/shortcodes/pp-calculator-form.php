@@ -246,7 +246,7 @@ if ( ! function_exists( 'pp_calculator_form' ) ) {
             <div class="pp-advance-option-wrapper pp-m-tb-20">
             	<div class="pp-additional-information">
 	                <input type="checkbox" name="pp-information" id="pp-information">
-	                <label for="pp-information">' . __( 'Želim da učestvujem u statistici. Pristajem da se moji podaci obrađuju.', PARTY_PLANER_TEXT_DOMAIN ) . '</label>
+	                <label for="pp-information">' . __( 'Space garantuje bezbednost i poverljivost podataka koji su prikupljeni istraživanjem. Prikupljeni podaci koriste se isključivo u statističke svrhe. Statistički podaci pomažu posetiocima, poslovnim subjektima, organizacijama i mnogim drugim.', PARTY_PLANER_TEXT_DOMAIN ) . '</label>
 	            	    
                     <div class="pp-col-50 pp-p-20 pp-addition-information-wrapper">
 	                    <div class="pp-fields pp-m-tb-10">
