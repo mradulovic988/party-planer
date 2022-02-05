@@ -49,15 +49,17 @@ toggleProcess(data.toggle.addInfoBtn, data.toggle.addInfoSection);
  * @param {string} str String message for alert()
  */
 const alertProcess = (e, max, str) => {
-    e.addEventListener('change', () => {
-        let s = e.value;
-        let i = parseInt(s);
+    if (e) {
+        e.addEventListener('change', () => {
+            let s = e.value;
+            let i = parseInt(s);
 
-        if (i < 0 || i > max) {
-            alert(`Maksimalni broj ${str} je ${max}. Za veći broj ${str} nas kontaktirajte lično. Hvala.`);
-            e.value = '';
-        }
-    });
+            if (i < 0 || i > max) {
+                alert(`Maksimalni broj ${str} je ${max}. Za veći broj ${str} nas kontaktirajte lično. Hvala.`);
+                e.value = '';
+            }
+        });
+    }
 }
 alertProcess(data.alert.alc, 300, 'gostiju');
 alertProcess(data.alert.nonAlc, 300, 'gostiju');
