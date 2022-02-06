@@ -24,6 +24,7 @@ if ( ! class_exists( 'PP_Public' ) ) {
 
 		public function pp_includes() {
 			include PARTY_PLANER_PATH . '/public/shortcodes/pp-calculator-form.php';
+			include PARTY_PLANER_PATH . '/public/init/class-pp-calculation.php';
 		}
 	}
 

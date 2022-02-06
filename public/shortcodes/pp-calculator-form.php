@@ -14,7 +14,7 @@ if ( ! function_exists( 'pp_calculator_form' ) ) {
 	function pp_calculator_form() {
 		return '
 		<form action="" method="post" id="pp-calculator-form">
-		' . wp_nonce_field( 'pp_calculator_save', 'pp_calculator_name' ) . '
+		' . wp_nonce_field( 'pp_calculator_save', 'pp_calculator_name' ) . PP_STRONG_CONS . '
 			<div class="pp-basic-section">
 	            <div class="pp-row">
 	                <div class="pp-col-50 pp-p-20">
