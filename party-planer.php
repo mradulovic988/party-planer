@@ -3,8 +3,8 @@
  * Party Planer
  *
  * @package           Party_Planer
- * @author            Marko Radulovic
- * @copyright         2022 Marko Radulovic
+ * @author            M Lab Studio <info@mlab-studio.com>
+ * @copyright         2022 M Lab Studio
  * @license           GPL-3.0-or-later
  *
  * @wordpress-plugin
@@ -14,7 +14,7 @@
  * Version:           1.0.0
  * Requires at least: 5.2
  * Requires PHP:      7.1
- * Author:            Marko Radulovic
+ * Author:            M Lab Studio
  * Author URI:        https://mlab-studio.com/
  * Text Domain:       party-planer
  * License:           GPL v3 or later

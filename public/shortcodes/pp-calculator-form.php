@@ -1,4 +1,13 @@
 <?php
+/**
+ * Shortcode that show calculator on the front-end
+ *
+ * @author M Lab Studio
+ * @since 1.0.0
+ * @link https://developer.wordpress.org/reference/functions/add_shortcode
+ * @see https://projects.invisionapp.com/share/XA11Q5S62CG5#/screens
+ * @package pp_calculator_form
+ */
 add_shortcode( 'party-planer', 'pp_calculator_form' );
 
 if ( ! function_exists( 'pp_calculator_form' ) ) {
@@ -245,8 +254,8 @@ if ( ! function_exists( 'pp_calculator_form' ) ) {
             </div>
             <div class="pp-advance-option-wrapper pp-m-tb-20">
             	<div class="pp-additional-information">
-	                <input type="checkbox" name="pp-information" id="pp-information">
-	                <label for="pp-information">' . __( 'Space garantuje bezbednost i poverljivost podataka koji su prikupljeni istraživanjem. Prikupljeni podaci koriste se isključivo u statističke svrhe. Statistički podaci pomažu posetiocima, poslovnim subjektima, organizacijama i mnogim drugim.', PARTY_PLANER_TEXT_DOMAIN ) . '</label>
+	                <input type="checkbox" name="pp-information" id="pp-information" class="pp-m-tb-20">
+	                <label for="pp-information">' . __( 'Želim da učestvujem u istraživanju. Space garantuje bezbednost i poverljivost podataka koji su prikupljeni istraživanjem. Prikupljeni podaci koriste se isključivo u statističke svrhe.', PARTY_PLANER_TEXT_DOMAIN ) . '</label>
 	            	    
                     <div class="pp-col-50 pp-p-20 pp-addition-information-wrapper">
 	                    <div class="pp-fields pp-m-tb-10">
@@ -273,7 +282,7 @@ if ( ! function_exists( 'pp_calculator_form' ) ) {
             	</div>
             	
                 <span class="pp-advance-option">' . __( 'Napredne opcije    ⇩', PARTY_PLANER_TEXT_DOMAIN ) . '</span>
-        		<input type="submit" name="pp-party-planer-submit" id="pp-party-planer-submit" value="' . __( 'Računaj', PARTY_PLANER_TEXT_DOMAIN ) . '">
+        		<input type="submit" name="pp-party-planer-submit" id="pp-party-planer-submit" value="' . __( 'Izračunaj', PARTY_PLANER_TEXT_DOMAIN ) . '">
 			</div>
         </form>
 		';

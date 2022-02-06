@@ -37,6 +37,7 @@ if ( ! class_exists( 'PP_Config' ) ) {
 				$this->pp_public_files();
 			}
 			include PARTY_PLANER_PATH . '/includes/class-pp-includes.php';
+			include PARTY_PLANER_PATH . '/config/api/class-pp-settings.php';
 		}
 
 		public function pp_admin_files() {
