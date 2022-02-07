@@ -12,9 +12,9 @@ add_shortcode( 'party-planer', 'pp_calculator_form' );
 
 if ( ! function_exists( 'pp_calculator_form' ) ) {
 	function pp_calculator_form() {
-		return '
+		$data = '
 		<form action="" method="post" id="pp-calculator-form">
-		' . wp_nonce_field( 'pp_calculator_save', 'pp_calculator_name' ) . PP_STRONG_CONS . '
+		' . wp_nonce_field( 'pp_calculator_save', 'pp_calculator_name' ) . '
 			<div class="pp-basic-section">
 	            <div class="pp-row">
 	                <div class="pp-col-50 pp-p-20">
@@ -87,18 +87,18 @@ if ( ! function_exists( 'pp_calculator_form' ) ) {
 	                    </div>
 	                    <div class="pp-fields pp-m-tb-10 pp-inline-flex">
 	                        <label for="ppBearInputId" class="pp-m-lr-10">' . __( 'Pivo', PARTY_PLANER_TEXT_DOMAIN ) . '</label>
-	                        <input type="range" name="ppBearInputName" id="ppBearInputId" value="30" min="1" max="100" oninput="ppBearOutputId.value = ppBearInputId.value">
-   							<output class="pp-m-lr-10" name="ppBearOutputName" id="ppBearOutputId">30%</output>
+	                        <input type="range" name="ppBearInputName" id="ppBearInputId" value="40" min="1" max="100" oninput="ppBearOutputId.value = ppBearInputId.value">
+   							<output class="pp-m-lr-10" name="ppBearOutputName" id="ppBearOutputId">40</output><span class="pp-percentage">%</span>
 	                    </div>
 	                    <div class="pp-fields pp-m-tb-10 pp-inline-flex">
 	                        <label for="ppVineInputId" class="pp-m-lr-10">' . __( 'Vino', PARTY_PLANER_TEXT_DOMAIN ) . '</label>
-	                        <input type="range" name="ppVineInputName" id="ppVineInputId" value="55" min="1" max="100" oninput="ppVineOutputId.value = ppVineInputId.value">
-   							<output class="pp-m-lr-10" name="ppVineOutputName" id="ppVineOutputId">55%</output>
+	                        <input type="range" name="ppVineInputName" id="ppVineInputId" value="35" min="1" max="100" oninput="ppVineOutputId.value = ppVineInputId.value">
+   							<output class="pp-m-lr-10" name="ppVineOutputName" id="ppVineOutputId">35</output><span class="pp-percentage">%</span>
 	                    </div>
 	                    <div class="pp-fields pp-m-tb-10 pp-inline-flex">
 	                        <label for="ppStrongInputId" class="pp-m-lr-10">' . __( 'Žestina', PARTY_PLANER_TEXT_DOMAIN ) . '</label>
-	                        <input type="range" name="ppStrongInputName" id="ppStrongInputId" value="20" min="1" max="100" oninput="ppStrongOutputId.value = ppStrongInputId.value">
-   							<output class="pp-m-lr-10" name="ppStrongOutputName" id="ppStrongOutputId">20%</output>
+	                        <input type="range" name="ppStrongInputName" id="ppStrongInputId" value="25" min="1" max="100" oninput="ppStrongOutputId.value = ppStrongInputId.value">
+   							<output class="pp-m-lr-10" name="ppStrongOutputName" id="ppStrongOutputId">25</output><span class="pp-percentage">%</span>
 	                    </div>
 	                </div>
 	            </div>
@@ -253,7 +253,7 @@ if ( ! function_exists( 'pp_calculator_form' ) ) {
                 </div>
             </div>
             <div class="pp-advance-option-wrapper pp-m-tb-20">
-            	<div class="pp-additional-information">
+            	<div class="pp-additional-information pp-p-20">
 	                <input type="checkbox" name="pp-information" id="pp-information" class="pp-m-tb-20">
 	                <label for="pp-information">' . __( 'Želim da učestvujem u istraživanju. Space garantuje bezbednost i poverljivost podataka koji su prikupljeni istraživanjem. Prikupljeni podaci koriste se isključivo u statističke svrhe.', PARTY_PLANER_TEXT_DOMAIN ) . '</label>
 	            	    
@@ -284,7 +284,9 @@ if ( ! function_exists( 'pp_calculator_form' ) ) {
                 <span class="pp-advance-option">' . __( 'Napredne opcije    ⇩', PARTY_PLANER_TEXT_DOMAIN ) . '</span>
         		<input type="submit" name="pp-party-planer-submit" id="pp-party-planer-submit" value="' . __( 'Izračunaj', PARTY_PLANER_TEXT_DOMAIN ) . '">
 			</div>
-        </form>
-		';
+        </form>';
+		$data .= ( new PP_Calculation() )->pp_get_data();
+
+		return $data;
 	}
 }

@@ -1,10 +1,18 @@
 @media (max-width: 900px) {
     .pp-row {
-        display: block!important;
+        display: block !important;
     }
 
     .pp-col-50 {
         width: 100% !important;
+    }
+
+    .pp-col-33 {
+        width: 100% !important;
+    }
+
+    .pp-col-25 {
+        width: 40% !important;
     }
 
     .pp-w-100 {
@@ -16,7 +24,7 @@
     }
 
     .pp-inline-flex {
-        display: block!important;
+        display: block !important;
     }
 
     .pp-fields {
@@ -24,7 +32,7 @@
     }
 
     table.pp-table {
-        width: 100%!important;
+        width: 100% !important;
     }
 }
 
@@ -36,6 +44,14 @@
 
 .pp-col-50 {
     width: 50%;
+}
+
+.pp-col-33 {
+    width: 33%;
+}
+
+.pp-col-25 {
+    width: 25%;
 }
 
 .pp-p-20 {
@@ -146,4 +162,44 @@ table.pp-table, table.pp-table tr, table.pp-table td, table.pp-table th {
     display: none;
 }
 
+span.pp-percentage {
+    right: 10px;
+    position: relative;
+}
+
 /* End design */
+
+/* Form result */
+
+.pp-result-title-wrapper {
+    padding-top: 40px;
+    margin: 40px auto 20px auto;
+    border-top: 2px solid #DDD;
+    display: inline-flex;
+}
+
+.pp-result-title-wrapper, .pp-result-get-wrapper {
+    width: 100%;
+}
+
+.pp-result-get-wrapper {
+    display: inline-flex;
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+p.pp-result-number {
+    font-size: 31px;
+    color: #4aa2ea;
+    font-weight: 600;
+    line-height: 0;
+    margin: 1em !important;
+}
+
+span.pp-result-number-description {
+    font-size: 18px;
+}
+
+/* End Form result */
