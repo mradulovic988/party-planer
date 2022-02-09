@@ -87,18 +87,18 @@ if ( ! function_exists( 'pp_calculator_form' ) ) {
 	                    </div>
 	                    <div class="pp-fields pp-m-tb-10 pp-inline-flex">
 	                        <label for="ppBearInputId" class="pp-m-lr-10">' . __( 'Pivo', PARTY_PLANER_TEXT_DOMAIN ) . '</label>
-	                        <input type="range" name="ppBearInputName" id="ppBearInputId" value="40" min="1" max="100" oninput="ppBearOutputId.value = ppBearInputId.value">
-   							<output class="pp-m-lr-10" name="ppBearOutputName" id="ppBearOutputId">40</output><span class="pp-percentage">%</span>
+	                        <input type="range" name="ppBearInputName" id="ppBearInputId" value="' . PP_BEER_PREF . '" min="1" max="100" oninput="ppBearOutputId.value = ppBearInputId.value">
+   							<output class="pp-m-lr-10" name="ppBearOutputName" id="ppBearOutputId">' . PP_BEER_PREF . '</output><span class="pp-percentage">%</span>
 	                    </div>
 	                    <div class="pp-fields pp-m-tb-10 pp-inline-flex">
 	                        <label for="ppVineInputId" class="pp-m-lr-10">' . __( 'Vino', PARTY_PLANER_TEXT_DOMAIN ) . '</label>
-	                        <input type="range" name="ppVineInputName" id="ppVineInputId" value="35" min="1" max="100" oninput="ppVineOutputId.value = ppVineInputId.value">
-   							<output class="pp-m-lr-10" name="ppVineOutputName" id="ppVineOutputId">35</output><span class="pp-percentage">%</span>
+	                        <input type="range" name="ppVineInputName" id="ppVineInputId" value="' . PP_WINE_PREF . '" min="1" max="100" oninput="ppVineOutputId.value = ppVineInputId.value">
+   							<output class="pp-m-lr-10" name="ppVineOutputName" id="ppVineOutputId">' . PP_WINE_PREF . '</output><span class="pp-percentage">%</span>
 	                    </div>
 	                    <div class="pp-fields pp-m-tb-10 pp-inline-flex">
 	                        <label for="ppStrongInputId" class="pp-m-lr-10">' . __( 'Žestina', PARTY_PLANER_TEXT_DOMAIN ) . '</label>
-	                        <input type="range" name="ppStrongInputName" id="ppStrongInputId" value="25" min="1" max="100" oninput="ppStrongOutputId.value = ppStrongInputId.value">
-   							<output class="pp-m-lr-10" name="ppStrongOutputName" id="ppStrongOutputId">25</output><span class="pp-percentage">%</span>
+	                        <input type="range" name="ppStrongInputName" id="ppStrongInputId" value="' . PP_STRONG_PREF . '" min="1" max="100" oninput="ppStrongOutputId.value = ppStrongInputId.value">
+   							<output class="pp-m-lr-10" name="ppStrongOutputName" id="ppStrongOutputId">' . PP_STRONG_PREF . '</output><span class="pp-percentage">%</span>
 	                    </div>
 	                </div>
 	            </div>

@@ -38,6 +38,7 @@ if ( ! class_exists( 'PP_Config' ) ) {
 			}
 			include PARTY_PLANER_PATH . '/includes/class-pp-includes.php';
 			include PARTY_PLANER_PATH . '/config/api/class-pp-settings.php';
+			include PARTY_PLANER_PATH . '/config/api/class-pp-query-table.php';
 			include PARTY_PLANER_PATH . '/config/const/class-pp-constants.php';
 		}
 

@@ -32,7 +32,7 @@ const toggleProcess = (b, s) => {
                 b.textContent = 'Napredne opcije    ⇩';
                 return s.style.display = 'none';
             } else {
-                b.textContent = 'Napredne opcije    ⇧';
+                b.textContent = 'Osnovne opcije    ⇧';
                 return s.style.display = 'block';
             }
         });

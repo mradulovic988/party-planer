@@ -25,6 +25,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+register_activation_hook( __FILE__, 'pp_activation' );
+function pp_activation() {
+	global $wpdb;
+	$charset_collate = $wpdb->get_charset_collate();
+
+	$sql = "CREATE TABLE `{$wpdb->prefix}party_planer` (
+		`id` int(255) NOT NULL AUTO_INCREMENT,
+		`fname` varchar(255) NOT NULL,
+		`lname` varchar(255) NOT NULL,
+		`email` varchar(255) NOT NULL,
+		`phone` varchar(255) NOT NULL,
+		PRIMARY KEY (id)
+	) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
+
+	$wpdb->query( $sql );
+}
+
 if ( ! class_exists( 'Party_Planer' ) ) {
 	class Party_Planer {
 		public function __construct() {

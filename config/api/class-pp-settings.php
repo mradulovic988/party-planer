@@ -48,12 +48,8 @@ if ( ! class_exists( 'PP_Settings' ) ) {
 				__( 'Query', PARTY_PLANER_TEXT_DOMAIN ),
 				__( 'Query', PARTY_PLANER_TEXT_DOMAIN ),
 				'manage_options',
-				'party_planer_query', array( $this, 'pp_query' )
+				'party_planer_query', array( $this, 'pp_register_submenu_query_page_callback' )
 			);
-		}
-
-		public function pp_query() {
-
 		}
 
 		/**
@@ -174,6 +170,20 @@ if ( ! class_exists( 'PP_Settings' ) ) {
 			<?php
 		}
 
+
+		public function pp_register_submenu_query_page_callback() {
+			$this->pp_menu_is_active( 'party_planer_query', 'party_planer_query', '' );
+
+			$get_tables = new PP_Query_Table();
+			$get_tables->prepare_items();
+			?>
+            <div class="wrap">
+				<?php $get_tables->display(); ?>
+            </div>
+			<?php
+
+		}
+
 		/**
 		 * Register all Settings API
 		 *
@@ -241,7 +251,7 @@ if ( ! class_exists( 'PP_Settings' ) ) {
 		 * @return void
 		 */
 		public function pp_section_id_beer_consumption() {
-			$this->pp_settings_fields( 'text', 'pp-beer-consumption', 'pp-beer-consumption', 'beer_consumption', esc_attr__( sanitize_text_field( $this->pp_options_check( 'beer_consumption' ) ) ), '0.4', esc_attr__( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, aliquam', PARTY_PLANER_TEXT_DOMAIN ) );
+			$this->pp_settings_fields( 'text', 'pp-beer-consumption', 'pp-beer-consumption', 'beer_consumption', esc_attr__( sanitize_text_field( $this->pp_options_check( 'beer_consumption' ) ) ), '0.4', esc_attr__( '%', PARTY_PLANER_TEXT_DOMAIN ) );
 		}
 
 		/**
@@ -250,7 +260,7 @@ if ( ! class_exists( 'PP_Settings' ) ) {
 		 * @return void
 		 */
 		public function pp_section_id_wine_consumption() {
-			$this->pp_settings_fields( 'text', 'pp-wine-consumption', 'pp-wine-consumption', 'wine_consumption', esc_attr__( sanitize_text_field( $this->pp_options_check( 'wine_consumption' ) ) ), '0.17', esc_attr__( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, aliquam', PARTY_PLANER_TEXT_DOMAIN ) );
+			$this->pp_settings_fields( 'text', 'pp-wine-consumption', 'pp-wine-consumption', 'wine_consumption', esc_attr__( sanitize_text_field( $this->pp_options_check( 'wine_consumption' ) ) ), '0.17', esc_attr__( '%', PARTY_PLANER_TEXT_DOMAIN ) );
 		}
 
 		/**
@@ -259,7 +269,7 @@ if ( ! class_exists( 'PP_Settings' ) ) {
 		 * @return void
 		 */
 		public function pp_section_id_strong_consumption() {
-			$this->pp_settings_fields( 'text', 'pp-strong-consumption', 'pp-strong-consumption', 'strong_consumption', esc_attr__( sanitize_text_field( $this->pp_options_check( 'strong_consumption' ) ) ), '0.08', esc_attr__( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, aliquam', PARTY_PLANER_TEXT_DOMAIN ) );
+			$this->pp_settings_fields( 'text', 'pp-strong-consumption', 'pp-strong-consumption', 'strong_consumption', esc_attr__( sanitize_text_field( $this->pp_options_check( 'strong_consumption' ) ) ), '0.08', esc_attr__( '%', PARTY_PLANER_TEXT_DOMAIN ) );
 		}
 
 		/**
@@ -268,7 +278,7 @@ if ( ! class_exists( 'PP_Settings' ) ) {
 		 * @return void
 		 */
 		public function pp_section_id_beer_preferences() {
-			$this->pp_settings_fields( 'text', 'pp-beer-preferences', 'pp-beer-preferences', 'beer_preferences', esc_attr__( sanitize_text_field( $this->pp_options_check( 'beer_preferences' ) ) ), '40%', esc_attr__( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, aliquam', PARTY_PLANER_TEXT_DOMAIN ) );
+			$this->pp_settings_fields( 'text', 'pp-beer-preferences', 'pp-beer-preferences', 'beer_preferences', esc_attr__( sanitize_text_field( $this->pp_options_check( 'beer_preferences' ) ) ), '40%', esc_attr__( '%', PARTY_PLANER_TEXT_DOMAIN ) );
 		}
 
 		/**
@@ -277,7 +287,7 @@ if ( ! class_exists( 'PP_Settings' ) ) {
 		 * @return void
 		 */
 		public function pp_section_id_wine_preferences() {
-			$this->pp_settings_fields( 'text', 'pp-wine-preferences', 'pp-wine-preferences', 'wine_preferences', esc_attr__( sanitize_text_field( $this->pp_options_check( 'wine_preferences' ) ) ), '35%', esc_attr__( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, aliquam', PARTY_PLANER_TEXT_DOMAIN ) );
+			$this->pp_settings_fields( 'text', 'pp-wine-preferences', 'pp-wine-preferences', 'wine_preferences', esc_attr__( sanitize_text_field( $this->pp_options_check( 'wine_preferences' ) ) ), '35%', esc_attr__( '%', PARTY_PLANER_TEXT_DOMAIN ) );
 		}
 
 		/**
@@ -286,7 +296,7 @@ if ( ! class_exists( 'PP_Settings' ) ) {
 		 * @return void
 		 */
 		public function pp_section_id_strong_preferences() {
-			$this->pp_settings_fields( 'text', 'pp-strong-preferences', 'pp-strong-preferences', 'strong_preferences', esc_attr__( sanitize_text_field( $this->pp_options_check( 'strong_preferences' ) ) ), '25%', esc_attr__( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, aliquam', PARTY_PLANER_TEXT_DOMAIN ) );
+			$this->pp_settings_fields( 'text', 'pp-strong-preferences', 'pp-strong-preferences', 'strong_preferences', esc_attr__( sanitize_text_field( $this->pp_options_check( 'strong_preferences' ) ) ), '25%', esc_attr__( '%', PARTY_PLANER_TEXT_DOMAIN ) );
 		}
 	}
 
