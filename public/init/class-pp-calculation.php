@@ -13,6 +13,8 @@
 if ( ! class_exists( 'PP_Calculation' ) ) {
 	class PP_Calculation {
 		public function pp_get_data() {
+			global $wpdb;
+
 			if ( isset( $_POST['pp-party-planer-submit'] ) ) {
 				if ( ! isset( $_POST['pp_calculator_name'] ) || ! wp_verify_nonce( $_POST['pp_calculator_name'], 'pp_calculator_save' ) ) {
 					esc_attr__( 'Sorry, this action is not allowed.', PARTY_PLANER_TEXT_DOMAIN );
@@ -72,10 +74,20 @@ if ( ! class_exists( 'PP_Calculation' ) ) {
 					<div>
 					';
 
-					if ( $pp_add_inf_name !== null && $pp_add_inf_lname !== null && $pp_add_inf_email !== null && $pp_add_inf_phone !== null ) {
-						return;
-					} else {
-						// code
+					if ( ! empty( $pp_add_inf_name ) || ! empty( $pp_add_inf_lname ) || ! empty( $pp_add_inf_email ) || ! empty( $pp_add_inf_phone ) ) {
+						$table  = $wpdb->prefix . 'party_planer';
+						$data   = array(
+							'fname'   => $pp_add_inf_name,
+							'lname'   => $pp_add_inf_lname,
+							'email'   => $pp_add_inf_email,
+							'phone'   => $pp_add_inf_phone,
+							'beer'    => ceil( $beer_cons ),
+							'wine'    => ceil( $wine_cons ),
+							'strong'  => ceil( $strong_cons ),
+							'non_alc' => ceil( $start_non_alc_point )
+						);
+						$format = array( '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s' );
+						$wpdb->insert( $table, $data, $format );
 					}
 
 					return $get_html;

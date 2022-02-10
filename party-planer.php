@@ -32,10 +32,14 @@ function pp_activation() {
 
 	$sql = "CREATE TABLE `{$wpdb->prefix}party_planer` (
 		`id` int(255) NOT NULL AUTO_INCREMENT,
-		`fname` varchar(255) NOT NULL,
-		`lname` varchar(255) NOT NULL,
-		`email` varchar(255) NOT NULL,
-		`phone` varchar(255) NOT NULL,
+		`fname` varchar(255),
+		`lname` varchar(255),
+		`email` varchar(255),
+		`phone` varchar(255),
+		`beer` varchar(255),
+		`wine` varchar(255),
+		`strong` varchar(255),
+		`non_alc` varchar(255),
 		PRIMARY KEY (id)
 	) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
 

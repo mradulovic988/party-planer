@@ -55,12 +55,16 @@ if ( ! class_exists( 'PP_Query_Table' ) ) {
 		 */
 		public function get_columns() {
 			$columns = array(
-				'id'     => 'ID',
-				'fname'  => 'First Name',
-				'lname'  => 'Last name',
-				'email'  => 'Email',
-				'phone'  => 'Phone',
-				'delete' => 'Delete'
+				'id'      => 'ID',
+				'fname'   => 'First Name',
+				'lname'   => 'Last name',
+				'email'   => 'Email',
+				'phone'   => 'Phone',
+				'beer'    => 'Pivo',
+				'wine'    => 'Vino',
+				'strong'  => 'Žestina',
+				'non_alc' => 'Bezalkoholno',
+				'delete'  => 'Delete'
 			);
 
 			return $columns;
@@ -97,12 +101,16 @@ if ( ! class_exists( 'PP_Query_Table' ) ) {
 
 			foreach ( $rows as $row ) {
 				$data[] = array(
-					'id'     => $row->id,
-					'fname'  => $row->fname,
-					'lname'  => $row->lname,
-					'email'  => $row->email,
-					'phone'  => $row->phone,
-					'delete' => '<form method="post">' . wp_nonce_field( 'pp_delete_save', 'pp_delete_name' ) . '<input type="hidden" name="pp-delete-query" value="' . $row->id . '" name="pp-delete-row"><input type="submit" value="Delete" name="pp-delete-row"></form>'
+					'id'      => $row->id,
+					'fname'   => $row->fname,
+					'lname'   => $row->lname,
+					'email'   => '<a href="mailto:' . $row->email . '">' . $row->email . '</a>',
+					'phone'   => '<a href="tel:' . $row->phone . '">' . $row->phone . '</a>',
+					'beer'    => $row->beer . 'l',
+					'wine'    => $row->wine . 'l',
+					'strong'  => $row->strong . 'l',
+					'non_alc' => $row->non_alc . 'l',
+					'delete'  => '<form method="post">' . wp_nonce_field( 'pp_delete_save', 'pp_delete_name' ) . '<input type="hidden" name="pp-delete-query" value="' . $row->id . '" name="pp-delete-row"><input type="submit" value="Delete" name="pp-delete-row"></form>'
 				);
 			}
 
@@ -143,6 +151,10 @@ if ( ! class_exists( 'PP_Query_Table' ) ) {
 				case 'lname':
 				case 'email':
 				case 'phone':
+				case 'beer':
+				case 'wine':
+				case 'strong':
+				case 'non_alc':
 				case 'delete':
 					return $item[ $column_name ];
 

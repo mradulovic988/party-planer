@@ -16,6 +16,15 @@ const data = {
         alc: document.querySelector('#pp-alc-guests-number'),
         nonAlc: document.querySelector('#pp-non-alc-guests-number'),
         partyTime: document.querySelector('#pp-time-party'),
+    },
+    require: {
+        checkBox: document.querySelector('input#pp-information'),
+        req: document.querySelectorAll('.pp-check-required')
+    },
+    globalProcess: {
+        reqProcess: function (e, c) {
+            e.forEach(er => er.required = c);
+        }
     }
 }
 
@@ -64,3 +73,30 @@ const alertProcess = (e, max, str) => {
 alertProcess(data.alert.alc, 300, 'gostiju');
 alertProcess(data.alert.nonAlc, 300, 'gostiju');
 alertProcess(data.alert.partyTime, 8, 'sati');
+
+//
+// checkBox.addEventListener('click', () => {
+//
+//     if (checkBox.checked == true) {
+//         req.forEach(r => {
+//             r.required = true;
+//         });
+//     } else {
+//         req.forEach(rs => {
+//             rs.required = false;
+//         });
+//     }
+// });
+
+const requireToggle = () => {
+    if (data.require.checkBox) {
+        data.require.checkBox.addEventListener('click', () => {
+            if (data.require.checkBox.checked === true) {
+                data.globalProcess.reqProcess(data.require.req, true);
+            } else {
+                data.globalProcess.reqProcess(data.require.req, false);
+            }
+        });
+    }
+};
+requireToggle();

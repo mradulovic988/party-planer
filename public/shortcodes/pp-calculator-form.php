@@ -23,11 +23,11 @@ if ( ! function_exists( 'pp_calculator_form' ) ) {
 	                        <h4 class="pp-title">' . __( 'BROJ GOSTIJU', PARTY_PLANER_TEXT_DOMAIN ) . '</h4>
 	                    </div>
 	                    <div class="pp-fields pp-m-tb-10">
-	                        <input class="pp-w-100" type="number" name="pp-alc-guests-number" id="pp-alc-guests-number">
+	                        <input class="pp-w-100" type="number" name="pp-alc-guests-number" id="pp-alc-guests-number" required>
 	                        <label for="pp-alc-guests-number" class="pp-m-lr-10">' . __( 'Broj gostiju koji konzumira alkohol', PARTY_PLANER_TEXT_DOMAIN ) . '</label>
 	                    </div>
 	                    <div class="pp-fields pp-m-tb-10">
-	                        <input class="pp-w-100" type="number" name="pp-non-alc-guests-number" id="pp-non-alc-guests-number">
+	                        <input class="pp-w-100" type="number" name="pp-non-alc-guests-number" id="pp-non-alc-guests-number" required>
 	                        <label for="pp-non-alc-guests-number" class="pp-m-lr-10">' . __( 'Broj gostiju koji ne konzumira alkohol', PARTY_PLANER_TEXT_DOMAIN ) . '</label>
 	                    </div>
 	                </div>
@@ -38,7 +38,7 @@ if ( ! function_exists( 'pp_calculator_form' ) ) {
 	                        <h4 class="pp-title">' . __( 'TRAJANJE PROSLAVE', PARTY_PLANER_TEXT_DOMAIN ) . '</h4>
 	                    </div>
 	                    <div class="pp-fields pp-m-tb-10">
-	                        <input type="number" name="pp-time-party" class="pp-time-party pp-w-100" id="pp-time-party" placeholder="h">
+	                        <input type="number" name="pp-time-party" class="pp-time-party pp-w-100" id="pp-time-party" placeholder="h" required>
 	                        <label for="pp-time-party" class="pp-m-lr-10">' . __( '(uneti vreme trajanja proslave)', PARTY_PLANER_TEXT_DOMAIN ) . '</label>
 	                    </div>
 	                </div>
@@ -87,17 +87,17 @@ if ( ! function_exists( 'pp_calculator_form' ) ) {
 	                    </div>
 	                    <div class="pp-fields pp-m-tb-10 pp-inline-flex">
 	                        <label for="ppBearInputId" class="pp-m-lr-10">' . __( 'Pivo', PARTY_PLANER_TEXT_DOMAIN ) . '</label>
-	                        <input type="range" name="ppBearInputName" id="ppBearInputId" value="' . PP_BEER_PREF . '" min="1" max="100" oninput="ppBearOutputId.value = ppBearInputId.value">
+	                        <input type="range" name="ppBearInputName" id="ppBearInputId" value="' . PP_BEER_PREF . '" min="1" max="100" oninput="ppBearOutputId.value = ppBearInputId.value" required>
    							<output class="pp-m-lr-10" name="ppBearOutputName" id="ppBearOutputId">' . PP_BEER_PREF . '</output><span class="pp-percentage">%</span>
 	                    </div>
 	                    <div class="pp-fields pp-m-tb-10 pp-inline-flex">
 	                        <label for="ppVineInputId" class="pp-m-lr-10">' . __( 'Vino', PARTY_PLANER_TEXT_DOMAIN ) . '</label>
-	                        <input type="range" name="ppVineInputName" id="ppVineInputId" value="' . PP_WINE_PREF . '" min="1" max="100" oninput="ppVineOutputId.value = ppVineInputId.value">
+	                        <input type="range" name="ppVineInputName" id="ppVineInputId" value="' . PP_WINE_PREF . '" min="1" max="100" oninput="ppVineOutputId.value = ppVineInputId.value" required>
    							<output class="pp-m-lr-10" name="ppVineOutputName" id="ppVineOutputId">' . PP_WINE_PREF . '</output><span class="pp-percentage">%</span>
 	                    </div>
 	                    <div class="pp-fields pp-m-tb-10 pp-inline-flex">
 	                        <label for="ppStrongInputId" class="pp-m-lr-10">' . __( 'Žestina', PARTY_PLANER_TEXT_DOMAIN ) . '</label>
-	                        <input type="range" name="ppStrongInputName" id="ppStrongInputId" value="' . PP_STRONG_PREF . '" min="1" max="100" oninput="ppStrongOutputId.value = ppStrongInputId.value">
+	                        <input type="range" name="ppStrongInputName" id="ppStrongInputId" value="' . PP_STRONG_PREF . '" min="1" max="100" oninput="ppStrongOutputId.value = ppStrongInputId.value" required>
    							<output class="pp-m-lr-10" name="ppStrongOutputName" id="ppStrongOutputId">' . PP_STRONG_PREF . '</output><span class="pp-percentage">%</span>
 	                    </div>
 	                </div>
@@ -262,19 +262,19 @@ if ( ! function_exists( 'pp_calculator_form' ) ) {
 	                        <table class="pp-table">
 								<tr>
 									<td>' . __( 'Ime: ', PARTY_PLANER_TEXT_DOMAIN ) . '</td>
-									<td><input class="pp-w-300" type="text" name="pp-add-inf-name"></td>
+									<td><input class="pp-w-300 pp-check-required" type="text" name="pp-add-inf-name"></td>
 								</tr>
 								<tr>
 									<td>' . __( 'Prezime: ', PARTY_PLANER_TEXT_DOMAIN ) . '</td>
-									<td><input class="pp-w-300" type="text" name="pp-add-inf-lname"></td>
+									<td><input class="pp-w-300 pp-check-required" type="text" name="pp-add-inf-lname"></td>
 								</tr>
 								<tr>
 									<td>' . __( 'Email: ', PARTY_PLANER_TEXT_DOMAIN ) . '</td>
-									<td><input class="pp-w-300" type="email" name="pp-add-inf-email"></td>
+									<td><input class="pp-w-300 pp-check-required" type="email" name="pp-add-inf-email"></td>
 								</tr>
 								<tr>
 									<td>' . __( 'Kontakt telefon: ', PARTY_PLANER_TEXT_DOMAIN ) . '</td>
-									<td><input class="pp-w-300" type="text" name="pp-add-inf-phone"></td>
+									<td><input class="pp-w-300 pp-check-required" type="text" name="pp-add-inf-phone"></td>
 								</tr>
 							</table>
 	                    </div>
