@@ -24,6 +24,7 @@ const data = {
         alc: document.querySelector('#pp-alc-guests-number'),
         nonAlc: document.querySelector('#pp-non-alc-guests-number'),
         partyTime: document.querySelector('#pp-time-party'),
+        oldGroup: document.querySelectorAll('.pp-range-numbers'),
     },
 
     /**
@@ -76,23 +77,25 @@ toggleProcess(data.toggle.addInfoBtn, data.toggle.addInfoSection);
  * @param {Element} e Get field element
  * @param {int} max Integer for defining rule
  * @param {string} str String message for alert()
+ * @param {string} text Text message for alert()
  */
-const alertProcess = (e, max, str) => {
+const alertProcess = (e, max, str, text) => {
     if (e) {
         e.addEventListener('change', () => {
             let s = e.value;
             let i = parseInt(s);
 
             if (i < 0 || i > max) {
-                alert(`Maksimalni broj ${str} je ${max}. Za veći broj ${str} nas kontaktirajte lično. Hvala.`);
+                alert(`Maksimalni broj ${str} je ${max}. ${text}`);
                 e.value = '';
             }
         });
     }
 }
-alertProcess(data.alert.alc, 300, 'gostiju');
-alertProcess(data.alert.nonAlc, 300, 'gostiju');
-alertProcess(data.alert.partyTime, 8, 'sati');
+alertProcess(data.alert.alc, 300, 'gostiju', ' Za veći broj gostiju nas kontaktirajte lično. Hvala.');
+alertProcess(data.alert.nonAlc, 300, 'gostiju', ' Za veći broj gostiju nas kontaktirajte lično. Hvala.');
+alertProcess(data.alert.partyTime, 8, 'sati', ' Za veći broj sati nas kontaktirajte lično. Hvala.');
+data.alert.oldGroup.forEach(o => alertProcess(o, 100, '', ''));
 
 /**
  * Check if the checkbox fields is checked
@@ -144,5 +147,5 @@ const handleChange = e => {
     }
     els.forEach((el, i) => el.value = values[i].toFixed(2));
 }
-els.forEach(el => el.addEventListener('input', handleChange));
+els.forEach(el => el.addEventListener('change', handleChange));
 

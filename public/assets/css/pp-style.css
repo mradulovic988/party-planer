@@ -34,6 +34,10 @@
     table.pp-table {
         width: 100% !important;
     }
+
+    .pp-result-col {
+        margin: 0 auto;
+    }
 }
 
 /* Structure */

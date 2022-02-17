@@ -60,10 +60,10 @@ if ( ! class_exists( 'PP_Query_Table' ) ) {
 				'lname'   => 'Last name',
 				'email'   => 'Email',
 				'phone'   => 'Phone',
-				'beer'    => 'Pivo',
-				'wine'    => 'Vino',
-				'strong'  => 'Žestina',
-				'non_alc' => 'Bezalkoholno',
+				'beer'    => 'Beer',
+				'wine'    => 'Wine',
+				'strong'  => 'Strong drinks',
+				'non_alc' => 'Nonalcoholic',
 				'delete'  => 'Delete'
 			);
 

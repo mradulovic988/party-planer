@@ -65,7 +65,7 @@ if ( ! class_exists( 'PP_Calculation' ) ) {
 								<p>' . __( 'Na osnovu gore unetih informacija kalkulator Vam automatski izračunava potrebe pića za vaše slavlje.', PARTY_PLANER_TEXT_DOMAIN ) . '</p>
 							</div>
 						</div>
-						<div class="pp-result-get-wrapper">
+						<div class="pp-result-get-wrapper pp-inline-flex">
 							<div class="pp-result-col pp-col-25">
 								<p class="pp-result-number">' . __( ceil( $beer_cons ) . 'l', PARTY_PLANER_TEXT_DOMAIN ) . '</p>
 								<span class="pp-result-number-description">' . __( 'Pivo', PARTY_PLANER_TEXT_DOMAIN ) . '</span>
