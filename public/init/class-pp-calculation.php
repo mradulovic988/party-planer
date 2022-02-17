@@ -20,6 +20,8 @@ if ( ! class_exists( 'PP_Calculation' ) ) {
 					esc_attr__( 'Sorry, this action is not allowed.', PARTY_PLANER_TEXT_DOMAIN );
 					exit;
 				} else {
+
+					// Declare fields and values
 					$pp_alc_guests_number     = ( ! empty( $_POST['pp-alc-guests-number'] ) ? sanitize_text_field( $_POST['pp-alc-guests-number'] ) : 0 );
 					$pp_non_alc_guests_number = ( ! empty( $_POST['pp-non-alc-guests-number'] ) ? sanitize_text_field( $_POST['pp-non-alc-guests-number'] ) : 0 );
 					$pp_time_party            = ( ! empty( $_POST['pp-time-party'] ) ? sanitize_text_field( $_POST['pp-time-party'] ) : 0 );
@@ -36,15 +38,25 @@ if ( ! class_exists( 'PP_Calculation' ) ) {
 					$pp_add_inf_email         = ( ! empty( $_POST['pp-add-inf-email'] ) ? sanitize_email( $_POST['pp-add-inf-email'] ) : null );
 					$pp_add_inf_phone         = ( ! empty( $_POST['pp-add-inf-phone'] ) ? sanitize_text_field( $_POST['pp-add-inf-phone'] ) : null );
 
-					// Do the math
+					// Create formula
 					$start_alc_point     = ( $pp_alc_guests_number - $pp_non_alc_guests_number ) * $pp_time_party;
 					$start_non_alc_point = $pp_non_alc_guests_number * $pp_time_party;
-					$beer_cons           = $start_alc_point * PP_BEER_CONS * $pp_bear_input_name / 100;
-					$wine_cons           = $start_alc_point * PP_WINE_CONS * $pp_wine_input_name / 100;
-					$strong_cons         = $start_alc_point * PP_STRONG_CONS * $pp_strong_input_name / 100;
+
+					// Add old group coefficients
+					$old_2030              = $pp_age_old_2030 * 1.1;
+					$old_3040              = $pp_age_old_3040 * 0.9;
+					$old_4050              = $pp_age_old_4050 * 0.8;
+					$old_5060              = $pp_age_old_5060 * 0.7;
+					$old_70                = $pp_age_old_70 * 0.6;
+					$old_group_coefficient = $old_2030 + $old_3040 + $old_4050 + $old_5060 + $old_70;
+
+					// Do the final math
+					$beer_cons   = $start_alc_point * PP_BEER_CONS * $pp_bear_input_name / 100 + $old_group_coefficient;
+					$wine_cons   = $start_alc_point * PP_WINE_CONS * $pp_wine_input_name / 100 + $old_group_coefficient;
+					$strong_cons = $start_alc_point * PP_STRONG_CONS * $pp_strong_input_name / 100 + $old_group_coefficient;
 
 					$get_html = '
-					<div class="pp-result-wrapper pp-p-20">
+					<div id="pp-calculated" class="pp-result-wrapper pp-p-20">
 						<div class="pp-result-title-wrapper">
 							<div class="pp-result-title pp-col-50">
 								<h2>' . __( 'Potrebno piće', PARTY_PLANER_TEXT_DOMAIN ) . '</h2>

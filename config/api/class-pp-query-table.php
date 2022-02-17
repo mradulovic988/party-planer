@@ -171,7 +171,7 @@ if ( ! class_exists( 'PP_Query_Table' ) ) {
 		private function sort_data( $a, $b ) {
 			// Set defaults
 			$orderby = 'id';
-			$order   = 'desc';
+			$order   = 'asc';
 
 			// If orderby is set, use this as the sort column
 			if ( ! empty( $_GET['orderby'] ) ) {
@@ -186,7 +186,7 @@ if ( ! class_exists( 'PP_Query_Table' ) ) {
 
 			$result = strcmp( $a[ $orderby ], $b[ $orderby ] );
 
-			if ( $order === 'desc' ) {
+			if ( $order === 'asc' ) {
 				return $result;
 			}
 

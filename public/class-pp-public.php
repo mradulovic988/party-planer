@@ -20,6 +20,7 @@ if ( ! class_exists( 'PP_Public' ) ) {
 		public function pp_enqueue_public_styles() {
 			wp_enqueue_style( 'pp_style', plugins_url( '/assets/css/pp-style.css', __FILE__ ) );
 			wp_enqueue_script( 'pp_script', plugins_url( '/assets/js/pp-script.js', __FILE__ ), array(), '1.0.0', true );
+			wp_enqueue_script( 'pp_animate', plugins_url( '/assets/js/pp-animate.js', __FILE__ ), array('jquery'), '1.0.0', true );
 		}
 
 		public function pp_includes() {

@@ -58,23 +58,23 @@ if ( ! function_exists( 'pp_calculator_form' ) ) {
 								</tr>
 								<tr>
 									<td>' . __( '20-30', PARTY_PLANER_TEXT_DOMAIN ) . '</td>
-									<td><input class="pp-w-100" type="text" name="pp-age-old-2030"></td>
-								</tr>
+									<td><input class="pp-w-100 pp-range-numbers pp-first-field" type="number" step="any" min="0" max="100" name="pp-age-old-2030" required> %</td>
+								</tr
 								<tr>
 									<td>' . __( '30-40', PARTY_PLANER_TEXT_DOMAIN ) . '</td>
-									<td><input class="pp-w-100" type="text" name="pp-age-old-3040"></td>
+									<td><input class="pp-w-100 pp-range-numbers pp-second-field" type="number" step="any" min="0" max="100" name="pp-age-old-3040" required> %</td>
 								</tr>
 								<tr>
 									<td>' . __( '40-50', PARTY_PLANER_TEXT_DOMAIN ) . '</td>
-									<td><input class="pp-w-100" type="text" name="pp-age-old-4050"></td>
+									<td><input class="pp-w-100 pp-range-numbers pp-third-field" type="number" step="any" min="0" max="100" name="pp-age-old-4050" required> %</td>
 								</tr>
 								<tr>
 									<td>' . __( '50-60', PARTY_PLANER_TEXT_DOMAIN ) . '</td>
-									<td><input class="pp-w-100" type="text" name="pp-age-old-5060"></td>
+									<td><input class="pp-w-100 pp-range-numbers pp-fourth-field" type="number" step="any" min="0" max="100" name="pp-age-old-5060" required> %</td>
 								</tr>
 								<tr>
 									<td>' . __( 'preko 70', PARTY_PLANER_TEXT_DOMAIN ) . '</td>
-									<td><input class="pp-w-100" type="text" name="pp-age-old-70"></td>
+									<td><input class="pp-w-100 pp-range-numbers pp-fifth-field" type="number" step="any" min="0" max="100" name="pp-age-old-70" required> %</td>
 								</tr>
 							</table>
 	                    </div>
