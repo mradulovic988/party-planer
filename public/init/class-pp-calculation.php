@@ -21,22 +21,45 @@ if ( ! class_exists( 'PP_Calculation' ) ) {
 					exit;
 				} else {
 
-					// Declare fields and values
+					// Declare basic guest number
 					$pp_alc_guests_number     = ( ! empty( $_POST['pp-alc-guests-number'] ) ? sanitize_text_field( $_POST['pp-alc-guests-number'] ) : 0 );
 					$pp_non_alc_guests_number = ( ! empty( $_POST['pp-non-alc-guests-number'] ) ? sanitize_text_field( $_POST['pp-non-alc-guests-number'] ) : 0 );
-					$pp_time_party            = ( ! empty( $_POST['pp-time-party'] ) ? sanitize_text_field( $_POST['pp-time-party'] ) : 0 );
-					$pp_age_old_2030          = ( ! empty( $_POST['pp-age-old-2030'] ) ? sanitize_text_field( $_POST['pp-age-old-2030'] ) : 0 );
-					$pp_age_old_3040          = ( ! empty( $_POST['pp-age-old-3040'] ) ? sanitize_text_field( $_POST['pp-age-old-3040'] ) : 0 );
-					$pp_age_old_4050          = ( ! empty( $_POST['pp-age-old-4050'] ) ? sanitize_text_field( $_POST['pp-age-old-4050'] ) : 0 );
-					$pp_age_old_5060          = ( ! empty( $_POST['pp-age-old-5060'] ) ? sanitize_text_field( $_POST['pp-age-old-5060'] ) : 0 );
-					$pp_age_old_70            = ( ! empty( $_POST['pp-age-old-70'] ) ? sanitize_text_field( $_POST['pp-age-old-70'] ) : 0 );
-					$pp_bear_input_name       = ( ! empty( $_POST['ppBearInputName'] ) ? sanitize_text_field( $_POST['ppBearInputName'] ) : PP_BEER_PREF );
-					$pp_wine_input_name       = ( ! empty( $_POST['ppVineInputName'] ) ? sanitize_text_field( $_POST['ppVineInputName'] ) : PP_WINE_PREF );
-					$pp_strong_input_name     = ( ! empty( $_POST['ppStrongInputName'] ) ? sanitize_text_field( $_POST['ppStrongInputName'] ) : PP_STRONG_PREF );
-					$pp_add_inf_name          = ( ! empty( $_POST['pp-add-inf-name'] ) ? sanitize_text_field( $_POST['pp-add-inf-name'] ) : null );
-					$pp_add_inf_lname         = ( ! empty( $_POST['pp-add-inf-lname'] ) ? sanitize_text_field( $_POST['pp-add-inf-lname'] ) : null );
-					$pp_add_inf_email         = ( ! empty( $_POST['pp-add-inf-email'] ) ? sanitize_email( $_POST['pp-add-inf-email'] ) : null );
-					$pp_add_inf_phone         = ( ! empty( $_POST['pp-add-inf-phone'] ) ? sanitize_text_field( $_POST['pp-add-inf-phone'] ) : null );
+
+					// Declare party time
+					$pp_time_party = ( ! empty( $_POST['pp-time-party'] ) ? sanitize_text_field( $_POST['pp-time-party'] ) : 0 );
+
+					// Declare advance old groups
+					$pp_age_old_2030 = ( ! empty( $_POST['pp-age-old-2030'] ) ? sanitize_text_field( $_POST['pp-age-old-2030'] ) : 0 );
+					$pp_age_old_3040 = ( ! empty( $_POST['pp-age-old-3040'] ) ? sanitize_text_field( $_POST['pp-age-old-3040'] ) : 0 );
+					$pp_age_old_4050 = ( ! empty( $_POST['pp-age-old-4050'] ) ? sanitize_text_field( $_POST['pp-age-old-4050'] ) : 0 );
+					$pp_age_old_5060 = ( ! empty( $_POST['pp-age-old-5060'] ) ? sanitize_text_field( $_POST['pp-age-old-5060'] ) : 0 );
+					$pp_age_old_70   = ( ! empty( $_POST['pp-age-old-70'] ) ? sanitize_text_field( $_POST['pp-age-old-70'] ) : 0 );
+
+					// Declare ranges
+					$pp_bear_input_name   = ( ! empty( $_POST['ppBearInputName'] ) ? sanitize_text_field( $_POST['ppBearInputName'] ) : PP_BEER_PREF );
+					$pp_wine_input_name   = ( ! empty( $_POST['ppVineInputName'] ) ? sanitize_text_field( $_POST['ppVineInputName'] ) : PP_WINE_PREF );
+					$pp_strong_input_name = ( ! empty( $_POST['ppStrongInputName'] ) ? sanitize_text_field( $_POST['ppStrongInputName'] ) : PP_STRONG_PREF );
+
+					// Declare user description fields
+					$pp_add_inf_name  = ( ! empty( $_POST['pp-add-inf-name'] ) ? sanitize_text_field( $_POST['pp-add-inf-name'] ) : null );
+					$pp_add_inf_lname = ( ! empty( $_POST['pp-add-inf-lname'] ) ? sanitize_text_field( $_POST['pp-add-inf-lname'] ) : null );
+					$pp_add_inf_email = ( ! empty( $_POST['pp-add-inf-email'] ) ? sanitize_email( $_POST['pp-add-inf-email'] ) : null );
+					$pp_add_inf_phone = ( ! empty( $_POST['pp-add-inf-phone'] ) ? sanitize_text_field( $_POST['pp-add-inf-phone'] ) : null );
+
+					// Declare advance type preferences fields
+					$pp_add_beer_lager    = ( ! empty( $_POST['pp-adv-beer-lager'] ) ? sanitize_text_field( $_POST['pp-adv-beer-lager'] ) : null );
+					$pp_add_beer_psenica  = ( ! empty( $_POST['pp-adv-beer-psenicno'] ) ? sanitize_text_field( $_POST['pp-adv-beer-psenicno'] ) : null );
+					$pp_add_beer_ipa      = ( ! empty( $_POST['pp-adv-beer-ipa'] ) ? sanitize_text_field( $_POST['pp-adv-beer-ipa'] ) : null );
+					$pp_add_wine_red      = ( ! empty( $_POST['pp-adv-vine-crveno'] ) ? sanitize_text_field( $_POST['pp-adv-vine-crveno'] ) : null );
+					$pp_add_wine_white    = ( ! empty( $_POST['pp-adv-vine-belo'] ) ? sanitize_text_field( $_POST['pp-adv-vine-belo'] ) : null );
+					$pp_add_wine_rose     = ( ! empty( $_POST['pp-adv-vine-rose'] ) ? sanitize_text_field( $_POST['pp-adv-vine-rose'] ) : null );
+					$pp_add_wine_penusavo = ( ! empty( $_POST['pp-adv-vine-penusavo'] ) ? sanitize_text_field( $_POST['pp-adv-vine-penusavo'] ) : null );
+					$pp_add_strong_vodka  = ( ! empty( $_POST['pp-adv-strong-vodka'] ) ? sanitize_text_field( $_POST['pp-adv-strong-vodka'] ) : null );
+					$pp_add_strong_dzin   = ( ! empty( $_POST['pp-adv-strong-dzin'] ) ? sanitize_text_field( $_POST['pp-adv-strong-dzin'] ) : null );
+					$pp_add_strong_viski  = ( ! empty( $_POST['pp-adv-strong-viski'] ) ? sanitize_text_field( $_POST['pp-adv-strong-viski'] ) : null );
+					$pp_add_strong_rakija = ( ! empty( $_POST['pp-adv-strong-rakija'] ) ? sanitize_text_field( $_POST['pp-adv-strong-rakija'] ) : null );
+					$pp_add_strong_tekila = ( ! empty( $_POST['pp-adv-strong-tekila'] ) ? sanitize_text_field( $_POST['pp-adv-strong-tekila'] ) : null );
+					$pp_add_strong_vermut = ( ! empty( $_POST['pp-adv-strong-vermut'] ) ? sanitize_text_field( $_POST['pp-adv-strong-vermut'] ) : null );
 
 					// Create formula
 					$start_alc_point     = ( $pp_alc_guests_number - $pp_non_alc_guests_number ) * $pp_time_party;
@@ -50,10 +73,28 @@ if ( ! class_exists( 'PP_Calculation' ) ) {
 					$old_70                = $pp_age_old_70 * 0.6;
 					$old_group_coefficient = $old_2030 + $old_3040 + $old_4050 + $old_5060 + $old_70;
 
+					// Add type preferences
+					$beer_lager       = $pp_add_beer_lager / 100;
+					$beer_psenica     = $pp_add_beer_psenica / 100;
+					$beer_ipa         = $pp_add_beer_ipa / 100;
+					$wine_red         = $pp_add_wine_red / 100;
+					$wine_white       = $pp_add_wine_white / 100;
+					$wine_rose        = $pp_add_wine_rose / 100;
+					$wine_penusavo    = $pp_add_wine_penusavo / 100;
+					$strong_vodka     = $pp_add_strong_vodka / 100;
+					$strong_dzin      = $pp_add_strong_dzin / 100;
+					$strong_viski     = $pp_add_strong_viski / 100;
+					$strong_rakija    = $pp_add_strong_rakija / 100;
+					$strong_tekila    = $pp_add_strong_tekila / 100;
+					$strong_vermut    = $pp_add_strong_vermut / 100;
+					$type_preferences = $beer_lager + $beer_psenica + $beer_ipa + $wine_red + $wine_white + $wine_rose +
+					                    $wine_penusavo + $strong_vodka + $strong_dzin + $strong_viski + $strong_rakija +
+					                    $strong_tekila + $strong_vermut;
+
 					// Do the final math
-					$beer_cons   = $start_alc_point * PP_BEER_CONS * $pp_bear_input_name / 100 + $old_group_coefficient;
-					$wine_cons   = $start_alc_point * PP_WINE_CONS * $pp_wine_input_name / 100 + $old_group_coefficient;
-					$strong_cons = $start_alc_point * PP_STRONG_CONS * $pp_strong_input_name / 100 + $old_group_coefficient;
+					$beer_cons   = $start_alc_point * PP_BEER_CONS * $pp_bear_input_name / 100 + $old_group_coefficient + $type_preferences;
+					$wine_cons   = $start_alc_point * PP_WINE_CONS * $pp_wine_input_name / 100 + $old_group_coefficient + $type_preferences;
+					$strong_cons = $start_alc_point * PP_STRONG_CONS * $pp_strong_input_name / 100 + $old_group_coefficient + $type_preferences;
 
 					$get_html = '
 					<div id="pp-calculated" class="pp-result-wrapper pp-p-20">

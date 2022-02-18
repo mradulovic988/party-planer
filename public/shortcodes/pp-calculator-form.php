@@ -48,6 +48,32 @@ if ( ! function_exists( 'pp_calculator_form' ) ) {
 	                <div class="pp-col-50 pp-p-20">
 	                    <div class="pp-title-wrapper">
 	                        <img class="pp-dot" src="' . plugins_url( '../assets/img/pp-dot.png', __FILE__ ) . '" alt="">
+	                        <h4 class="pp-title">' . __( 'PREFERENCIJA PIĆA', PARTY_PLANER_TEXT_DOMAIN ) . '</h4>
+	                    </div>
+	                    <div class="pp-fields pp-m-tb-10 pp-inline-flex">
+	                        <label for="ppBearInputId" class="pp-m-lr-10">' . __( 'Pivo', PARTY_PLANER_TEXT_DOMAIN ) . '</label>
+	                        <input type="range" name="ppBearInputName" id="ppBearInputId" value="' . PP_BEER_PREF . '" min="1" max="100" oninput="ppBearOutputId.value = ppBearInputId.value" required>
+   							<output class="pp-m-lr-10" name="ppBearOutputName" id="ppBearOutputId">' . PP_BEER_PREF . '</output><span class="pp-percentage">%</span>
+	                    </div>
+	                    <div class="pp-fields pp-m-tb-10 pp-inline-flex">
+	                        <label for="ppVineInputId" class="pp-m-lr-10">' . __( 'Vino', PARTY_PLANER_TEXT_DOMAIN ) . '</label>
+	                        <input type="range" name="ppVineInputName" id="ppVineInputId" value="' . PP_WINE_PREF . '" min="1" max="100" oninput="ppVineOutputId.value = ppVineInputId.value" required>
+   							<output class="pp-m-lr-10" name="ppVineOutputName" id="ppVineOutputId">' . PP_WINE_PREF . '</output><span class="pp-percentage">%</span>
+	                    </div>
+	                    <div class="pp-fields pp-m-tb-10 pp-inline-flex">
+	                        <label for="ppStrongInputId" class="pp-m-lr-10">' . __( 'Žestina', PARTY_PLANER_TEXT_DOMAIN ) . '</label>
+	                        <input type="range" name="ppStrongInputName" id="ppStrongInputId" value="' . PP_STRONG_PREF . '" min="1" max="100" oninput="ppStrongOutputId.value = ppStrongInputId.value" required>
+   							<output class="pp-m-lr-10" name="ppStrongOutputName" id="ppStrongOutputId">' . PP_STRONG_PREF . '</output><span class="pp-percentage">%</span>
+	                    </div>
+	                </div>
+	            </div>
+            </div>
+            
+            <div class="pp-advanced-section">
+            	<div class="pp-row">
+	                <div class="pp-col-50 pp-p-20">
+	                    <div class="pp-title-wrapper">
+	                        <img class="pp-dot" src="' . plugins_url( '../assets/img/pp-dot.png', __FILE__ ) . '" alt="">
 	                        <h4 class="pp-title">' . __( 'STAROSNE GRUPE', PARTY_PLANER_TEXT_DOMAIN ) . '</h4>
 	                    </div>
 	                    <div class="pp-fields pp-m-tb-10">
@@ -79,71 +105,12 @@ if ( ! function_exists( 'pp_calculator_form' ) ) {
 							</table>
 	                    </div>
 	                </div>
-	        
-	                <div class="pp-col-50 pp-p-20">
-	                    <div class="pp-title-wrapper">
-	                        <img class="pp-dot" src="' . plugins_url( '../assets/img/pp-dot.png', __FILE__ ) . '" alt="">
-	                        <h4 class="pp-title">' . __( 'PREFERENCIJA PIĆA', PARTY_PLANER_TEXT_DOMAIN ) . '</h4>
-	                    </div>
-	                    <div class="pp-fields pp-m-tb-10 pp-inline-flex">
-	                        <label for="ppBearInputId" class="pp-m-lr-10">' . __( 'Pivo', PARTY_PLANER_TEXT_DOMAIN ) . '</label>
-	                        <input type="range" name="ppBearInputName" id="ppBearInputId" value="' . PP_BEER_PREF . '" min="1" max="100" oninput="ppBearOutputId.value = ppBearInputId.value" required>
-   							<output class="pp-m-lr-10" name="ppBearOutputName" id="ppBearOutputId">' . PP_BEER_PREF . '</output><span class="pp-percentage">%</span>
-	                    </div>
-	                    <div class="pp-fields pp-m-tb-10 pp-inline-flex">
-	                        <label for="ppVineInputId" class="pp-m-lr-10">' . __( 'Vino', PARTY_PLANER_TEXT_DOMAIN ) . '</label>
-	                        <input type="range" name="ppVineInputName" id="ppVineInputId" value="' . PP_WINE_PREF . '" min="1" max="100" oninput="ppVineOutputId.value = ppVineInputId.value" required>
-   							<output class="pp-m-lr-10" name="ppVineOutputName" id="ppVineOutputId">' . PP_WINE_PREF . '</output><span class="pp-percentage">%</span>
-	                    </div>
-	                    <div class="pp-fields pp-m-tb-10 pp-inline-flex">
-	                        <label for="ppStrongInputId" class="pp-m-lr-10">' . __( 'Žestina', PARTY_PLANER_TEXT_DOMAIN ) . '</label>
-	                        <input type="range" name="ppStrongInputName" id="ppStrongInputId" value="' . PP_STRONG_PREF . '" min="1" max="100" oninput="ppStrongOutputId.value = ppStrongInputId.value" required>
-   							<output class="pp-m-lr-10" name="ppStrongOutputName" id="ppStrongOutputId">' . PP_STRONG_PREF . '</output><span class="pp-percentage">%</span>
-	                    </div>
-	                </div>
-	            </div>
-            </div>
-            
-            <div class="pp-advanced-section">
-            	<div class="pp-row">
-	                <div class="pp-col-50 pp-p-20">
-	                    <div class="pp-fields pp-m-tb-10">
-	                        <table class="pp-table">
-	                            <tr>
-									<th>' . __( 'godine', PARTY_PLANER_TEXT_DOMAIN ) . '</th>
-									<th>' . __( 'muškarci', PARTY_PLANER_TEXT_DOMAIN ) . '</th>
-									<th>' . __( 'žene', PARTY_PLANER_TEXT_DOMAIN ) . '</th>
-								</tr>
-								<tr>
-									<td>' . __( '20-30', PARTY_PLANER_TEXT_DOMAIN ) . '</td>
-									<td><input class="pp-w-100" type="text" name="pp-gender-2030"></td>
-									<td><input class="pp-w-100" type="text" name="pp-gender-2030"></td>
-								</tr>
-								<tr>
-									<td>' . __( '30-40', PARTY_PLANER_TEXT_DOMAIN ) . '</td>
-									<td><input class="pp-w-100" type="text" name="pp-gender-3040"></td>
-									<td><input class="pp-w-100" type="text" name="pp-gender-3040"></td>
-								</tr>
-								<tr>
-									<td>' . __( '40-50', PARTY_PLANER_TEXT_DOMAIN ) . '</td>
-									<td><input class="pp-w-100" type="text" name="pp-gender-4050"></td>
-									<td><input class="pp-w-100" type="text" name="pp-gender-4050"></td>
-								</tr>
-								<tr>
-									<td>' . __( '50-60', PARTY_PLANER_TEXT_DOMAIN ) . '</td>
-									<td><input class="pp-w-100" type="text" name="pp-gender-5060"></td>
-									<td><input class="pp-w-100" type="text" name="pp-gender-5060"></td>
-								</tr>
-								<tr>
-									<td>' . __( 'preko 70', PARTY_PLANER_TEXT_DOMAIN ) . '</td>
-									<td><input class="pp-w-100" type="text" name="pp-gender-70"></td>
-									<td><input class="pp-w-100" type="text" name="pp-gender-70"></td>
-								</tr>
-							</table>
-	                    </div>
-	                </div>
 	                
 	                <div class="pp-col-50 pp-p-20">
+	                	<div class="pp-title-wrapper">
+	                        <img class="pp-dot" src="' . plugins_url( '../assets/img/pp-dot.png', __FILE__ ) . '" alt="">
+	                        <h4 class="pp-title">' . __( 'PREFERENCIJE TIPA', PARTY_PLANER_TEXT_DOMAIN ) . '</h4>
+	                    </div>
 	                    <div class="pp-fields pp-m-tb-10">
 		                    <div class="pp-row">
 		                    	<!-- Pivo - col 1 -->
@@ -155,22 +122,17 @@ if ( ! function_exists( 'pp_calculator_form' ) ) {
 									</tr>
 									<tr>
 										<td>' . __( 'lager', PARTY_PLANER_TEXT_DOMAIN ) . '</td>
-										<td><input class="pp-w-100" type="text" name="pp-adv-beer-lager"></td>
+										<td><input class="pp-w-100" type="text" value="70" name="pp-adv-beer-lager"></td>
 										<td>%</td>
 									</tr>
 									<tr>
 										<td>' . __( 'pšenično', PARTY_PLANER_TEXT_DOMAIN ) . '</td>
-										<td><input class="pp-w-100" type="text" name="pp-adv-beer-psenicno"></td>
+										<td><input class="pp-w-100" type="text" value="10" name="pp-adv-beer-psenicno"></td>
 										<td>%</td>
 									</tr>
 									<tr>
 										<td>' . __( 'ipa', PARTY_PLANER_TEXT_DOMAIN ) . '</td>
-										<td><input class="pp-w-100" type="text" name="pp-adv-beer-ipa"></td>
-										<td>%</td>
-									</tr>
-									<tr>
-										<td>' . __( 'ostalo', PARTY_PLANER_TEXT_DOMAIN ) . '</td>
-										<td><input class="pp-w-100" type="text" name="pp-adv-beer-ostalo"></td>
+										<td><input class="pp-w-100" type="text" value="20" name="pp-adv-beer-ipa"></td>
 										<td>%</td>
 									</tr>
 								</table>
@@ -184,27 +146,22 @@ if ( ! function_exists( 'pp_calculator_form' ) ) {
 									</tr>
 									<tr>
 										<td>' . __( 'crveno', PARTY_PLANER_TEXT_DOMAIN ) . '</td>
-										<td><input class="pp-w-100" type="text" name="pp-adv-vine-crveno"></td>
+										<td><input class="pp-w-100" type="text" value="45" name="pp-adv-vine-crveno"></td>
 										<td>%</td>
 									</tr>
 									<tr>
 										<td>' . __( 'belo', PARTY_PLANER_TEXT_DOMAIN ) . '</td>
-										<td><input class="pp-w-100" type="text" name="pp-adv-vine-belo"></td>
+										<td><input class="pp-w-100" type="text" value="25" name="pp-adv-vine-belo"></td>
 										<td>%</td>
 									</tr>
 									<tr>
 										<td>' . __( 'rose', PARTY_PLANER_TEXT_DOMAIN ) . '</td>
-										<td><input class="pp-w-100" type="text" name="pp-adv-vine-rose"></td>
+										<td><input class="pp-w-100" type="text" value="25" name="pp-adv-vine-rose"></td>
 										<td>%</td>
 									</tr>
 									<tr>
 										<td>' . __( 'penušavo', PARTY_PLANER_TEXT_DOMAIN ) . '</td>
-										<td><input class="pp-w-100" type="text" name="pp-adv-vine-penusavo"></td>
-										<td>%</td>
-									</tr>
-									<tr>
-										<td>' . __( 'ostalo', PARTY_PLANER_TEXT_DOMAIN ) . '</td>
-										<td><input class="pp-w-100" type="text" name="pp-adv-vine-ostalo"></td>
+										<td><input class="pp-w-100" type="text" value="20" name="pp-adv-vine-penusavo"></td>
 										<td>%</td>
 									</tr>
 								</table>
@@ -218,32 +175,32 @@ if ( ! function_exists( 'pp_calculator_form' ) ) {
 									</tr>
 									<tr>
 										<td>' . __( 'vodka', PARTY_PLANER_TEXT_DOMAIN ) . '</td>
-										<td><input class="pp-w-100" type="text" name="pp-adv-strong-vodka"></td>
+										<td><input class="pp-w-100" type="text" value="32" name="pp-adv-strong-vodka"></td>
 										<td>%</td>
 									</tr>
 									<tr>
 										<td>' . __( 'džin', PARTY_PLANER_TEXT_DOMAIN ) . '</td>
-										<td><input class="pp-w-100" type="text" name="pp-adv-strong-dzin"></td>
+										<td><input class="pp-w-100" type="text" value="13" name="pp-adv-strong-dzin"></td>
 										<td>%</td>
 									</tr>
 									<tr>
 										<td>' . __( 'viski', PARTY_PLANER_TEXT_DOMAIN ) . '</td>
-										<td><input class="pp-w-100" type="text" name="pp-adv-strong-viski"></td>
+										<td><input class="pp-w-100" type="text" value="13" name="pp-adv-strong-viski"></td>
 										<td>%</td>
 									</tr>
 									<tr>
 										<td>' . __( 'rakija', PARTY_PLANER_TEXT_DOMAIN ) . '</td>
-										<td><input class="pp-w-100" type="text" name="pp-adv-strong-rakija"></td>
+										<td><input class="pp-w-100" type="text" value="27" name="pp-adv-strong-rakija"></td>
 										<td>%</td>
 									</tr>
 									<tr>
 										<td>' . __( 'tekila', PARTY_PLANER_TEXT_DOMAIN ) . '</td>
-										<td><input class="pp-w-100" type="text" name="pp-adv-strong-tekila"></td>
+										<td><input class="pp-w-100" type="text" value="5" name="pp-adv-strong-tekila"></td>
 										<td>%</td>
 									</tr>
 									<tr>
-										<td>' . __( 'ostalo', PARTY_PLANER_TEXT_DOMAIN ) . '</td>
-										<td><input class="pp-w-100" type="text" name="pp-adv-strong-ostalo"></td>
+										<td>' . __( 'vermut', PARTY_PLANER_TEXT_DOMAIN ) . '</td>
+										<td><input class="pp-w-100" type="text" value="10" name="pp-adv-strong-vermut"></td>
 										<td>%</td>
 									</tr>
 								</table>

@@ -206,4 +206,7 @@ span.pp-result-number-description {
     font-size: 18px;
 }
 
+table.pp-table tbody {
+    display: inherit;
+}
 /* End Form result */
