@@ -25,6 +25,7 @@ const data = {
         nonAlc: document.querySelector('#pp-non-alc-guests-number'),
         partyTime: document.querySelector('#pp-time-party'),
         oldGroup: document.querySelectorAll('.pp-range-numbers'),
+        advPrefType: document.querySelectorAll('.pp-total-percentages')
     },
 
     /**
@@ -96,6 +97,7 @@ alertProcess(data.alert.alc, 300, 'gostiju', ' Za veći broj gostiju nas kontakt
 alertProcess(data.alert.nonAlc, 300, 'gostiju', ' Za veći broj gostiju nas kontaktirajte lično. Hvala.');
 alertProcess(data.alert.partyTime, 8, 'sati', ' Za veći broj sati nas kontaktirajte lično. Hvala.');
 data.alert.oldGroup.forEach(o => alertProcess(o, 100, '', ''));
+data.alert.advPrefType.forEach(a => alertProcess(a, 100, '', ''))
 
 /**
  * Check if the checkbox fields is checked

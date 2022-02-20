@@ -31,7 +31,7 @@ if ( ! class_exists( 'PP_Query_Table' ) ) {
 			$data = $this->table_data();
 			usort( $data, array( &$this, 'sort_data' ) );
 
-			$perPage     = 3;
+			$perPage     = 20;
 			$currentPage = $this->get_pagenum();
 			$totalItems  = count( $data );
 
