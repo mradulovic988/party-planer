@@ -51,19 +51,13 @@ if ( ! function_exists( 'pp_calculator_form' ) ) {
 	                        <h4 class="pp-title">' . __( 'PREFERENCIJA PIĆA', PARTY_PLANER_TEXT_DOMAIN ) . '</h4>
 	                    </div>
 	                    <div class="pp-fields pp-m-tb-10 pp-inline-flex">
-	                        <label for="ppBearInputId" class="pp-m-lr-10">' . __( 'Pivo', PARTY_PLANER_TEXT_DOMAIN ) . '</label>
-	                        <input type="range" name="ppBearInputName" id="ppBearInputId" value="' . PP_BEER_PREF . '" min="1" max="100" oninput="ppBearOutputId.value = ppBearInputId.value" required>
-   							<output class="pp-m-lr-10" name="ppBearOutputName" id="ppBearOutputId">' . PP_BEER_PREF . '</output><span class="pp-percentage">%</span>
+	                    	' . __( 'Pivo', PARTY_PLANER_TEXT_DOMAIN ) . '<input id="ppBearInputId" type="range" class="pp-ranges" name="ppBearInputName" value="' . PP_BEER_PREF . '" min="1" max="100"/><label class="pp-label-beer-range" for="ppBearInputId">' . PP_BEER_PREF . '</label>%
 	                    </div>
 	                    <div class="pp-fields pp-m-tb-10 pp-inline-flex">
-	                        <label for="ppVineInputId" class="pp-m-lr-10">' . __( 'Vino', PARTY_PLANER_TEXT_DOMAIN ) . '</label>
-	                        <input type="range" name="ppVineInputName" id="ppVineInputId" value="' . PP_WINE_PREF . '" min="1" max="100" oninput="ppVineOutputId.value = ppVineInputId.value" required>
-   							<output class="pp-m-lr-10" name="ppVineOutputName" id="ppVineOutputId">' . PP_WINE_PREF . '</output><span class="pp-percentage">%</span>
+		                    ' . __( 'Vino', PARTY_PLANER_TEXT_DOMAIN ) . '<input id="ppVineInputId" type="range" class="pp-ranges" name="ppVineInputName" value="' . PP_WINE_PREF . '" min="1" max="100"/><label class="pp-label-vine-range" for="ppVineInputId"> ' . PP_WINE_PREF . '</label>%
 	                    </div>
 	                    <div class="pp-fields pp-m-tb-10 pp-inline-flex">
-	                        <label for="ppStrongInputId" class="pp-m-lr-10">' . __( 'Žestina', PARTY_PLANER_TEXT_DOMAIN ) . '</label>
-	                        <input type="range" name="ppStrongInputName" id="ppStrongInputId" value="' . PP_STRONG_PREF . '" min="1" max="100" oninput="ppStrongOutputId.value = ppStrongInputId.value" required>
-   							<output class="pp-m-lr-10" name="ppStrongOutputName" id="ppStrongOutputId">' . PP_STRONG_PREF . '</output><span class="pp-percentage">%</span>
+		                    ' . __( 'Žestina', PARTY_PLANER_TEXT_DOMAIN ) . '<input id="ppStrongInputId" type="range" class="pp-ranges" name="ppStrongInputName" value="' . PP_STRONG_PREF . '" min="1" max="100"/><label class="pp-label-strong-range" for="ppStrongInputId"> ' . PP_STRONG_PREF . '</label>%
 	                    </div>
 	                </div>
 	            </div>

@@ -210,3 +210,7 @@ table.pp-table tbody {
     display: inherit;
 }
 /* End Form result */
+
+input.pp-ranges {
+    padding: 0 10px;
+}

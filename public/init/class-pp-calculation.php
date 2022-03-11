@@ -62,8 +62,8 @@ if ( ! class_exists( 'PP_Calculation' ) ) {
 					$pp_add_strong_vermut = ( ! empty( $_POST['pp-adv-strong-vermut'] ) ? sanitize_text_field( $_POST['pp-adv-strong-vermut'] ) : null );
 
 					// Create formula
-					$start_alc_point     = ( $pp_alc_guests_number - $pp_non_alc_guests_number ) * $pp_time_party;
-					$start_non_alc_point = $pp_non_alc_guests_number * $pp_time_party;
+					$start_alc_point     = ( $pp_alc_guests_number - $pp_non_alc_guests_number ) * $pp_time_party; // alcoholic drinks
+					$start_non_alc_point = $pp_non_alc_guests_number * $pp_time_party; // non alcoholic drinks
 
 					// Add old group coefficients
 					$old_2030              = $pp_age_old_2030 * 1.1;

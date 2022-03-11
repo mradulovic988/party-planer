@@ -151,3 +151,55 @@ const handleChange = e => {
 }
 els.forEach(el => el.addEventListener('change', handleChange));
 
+/**
+ * Percentages of input fields for group Age
+ */
+
+const els1 = Array.from(document.querySelectorAll('.pp-ranges'));
+const total1 = 100;
+
+const values1 = new Array(els1.length).fill(40);
+els1.forEach((el, i) => el.value = values1[i].toFixed(3.3));
+
+/**
+ * Check percentages on input fields
+ *
+ * @param e
+ */
+const handleChange1 = e => {
+    const changedIndex = els1.indexOf(e.target);
+    const newValue = +e.target.value;
+    values1[changedIndex] = newValue;
+    const otherIndexes1 = new Array(els1.length)
+        .fill(0)
+        .map((_, i) => i)
+        .filter((_, i) => i !== changedIndex);
+
+    const otherSum1 = otherIndexes1.map(i => values1[i])
+        .reduce((a, c) => a + c);
+
+    if (otherSum1 === 0) {
+        otherIndexes1.forEach(i => values1[i] = (total1 - newValue) / (values1.length - 1));
+    } else {
+        const f = (total1 - newValue) / otherSum1;
+        otherIndexes1.forEach(i => values1[i] *= f);
+    }
+    els1.forEach((el, i) => {
+        el.value = values1[i].toFixed(2);
+        el.parentNode.querySelector("label").textContent = el.value;
+    });
+}
+els1.forEach(el => el.addEventListener('input', handleChange1));
+
+/**
+ * Range input fields
+ */
+document.querySelector("#ppBearInputId").addEventListener("input", function (e) {
+    document.querySelector(".pp-label-beer-range").textContent = e.currentTarget.value;
+})
+document.querySelector("#ppVineInputId").addEventListener("input", function (e) {
+    document.querySelector(".pp-label-vine-range").textContent = e.currentTarget.value;
+})
+document.querySelector("#ppStrongInputId").addEventListener("input", function (e) {
+    document.querySelector(".pp-label-strong-range").textContent = e.currentTarget.value;
+})
