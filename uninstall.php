@@ -15,3 +15,6 @@ global $wpdb;
 // Delete party_planer db table
 $table = $wpdb->prefix . 'party_planer';
 $wpdb->query( "DROP TABLE IF EXISTS $table" );
+
+// Delete registered options
+delete_option( 'pp_settings_fields' );
