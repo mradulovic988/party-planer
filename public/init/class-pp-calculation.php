@@ -62,7 +62,7 @@ if ( ! class_exists( 'PP_Calculation' ) ) {
 					$pp_add_strong_vermut = ( ! empty( $_POST['pp-adv-strong-vermut'] ) ? sanitize_text_field( $_POST['pp-adv-strong-vermut'] ) : null );
 
 					// Create formula
-					$start_alc_point     = ( $pp_alc_guests_number - $pp_non_alc_guests_number ) * $pp_time_party; // alcoholic drinks
+					$start_alc_point     = $pp_alc_guests_number * $pp_time_party; // alcoholic drinks
 					$start_non_alc_point = $pp_non_alc_guests_number * $pp_time_party; // non alcoholic drinks
 
 					// Add old group coefficients
@@ -92,9 +92,9 @@ if ( ! class_exists( 'PP_Calculation' ) ) {
 					                    $strong_tekila + $strong_vermut;
 
 					// Do the final math
-					$beer_cons   = $start_alc_point * PP_BEER_CONS * $pp_bear_input_name / 100 + $old_group_coefficient + $type_preferences;
-					$wine_cons   = $start_alc_point * PP_WINE_CONS * $pp_wine_input_name / 100 + $old_group_coefficient + $type_preferences;
-					$strong_cons = $start_alc_point * PP_STRONG_CONS * $pp_strong_input_name / 100 + $old_group_coefficient + $type_preferences;
+					$beer_cons   = $start_alc_point * PP_BEER_CONS * ( $pp_bear_input_name / 100 ) + $old_group_coefficient + $type_preferences;
+					$wine_cons   = $start_alc_point * PP_WINE_CONS * ( $pp_wine_input_name / 100 ) + $old_group_coefficient + $type_preferences;
+					$strong_cons = $start_alc_point * PP_STRONG_CONS * ( $pp_strong_input_name / 100 ) + $old_group_coefficient + $type_preferences;
 
 					$get_html = '
 					<div id="pp-calculated" class="pp-result-wrapper pp-p-20">

@@ -159,7 +159,7 @@ const els1 = Array.from(document.querySelectorAll('.pp-ranges'));
 const total1 = 100;
 
 const values1 = new Array(els1.length).fill(40);
-els1.forEach((el, i) => el.value = values1[i].toFixed(3.3));
+els1.forEach((el, i) => el.value = values1[i].toFixed(2));
 
 /**
  * Check percentages on input fields
