@@ -28,7 +28,7 @@ if ( ! function_exists( 'pp_calculator_form' ) ) {
 	                    </div>
 	                    <div class="pp-fields pp-m-tb-10">
 	                        <input class="pp-w-100" type="number" name="pp-non-alc-guests-number" id="pp-non-alc-guests-number" required>
-	                        <label for="pp-non-alc-guests-number" class="pp-m-lr-10">' . __( 'Broj gostiju koji ne konzumira alkohol', PARTY_PLANER_TEXT_DOMAIN ) . '</label>
+	                        <label for="pp-non-alc-guests-number" class="pp-m-lr-10">' . __( 'Broj gostiju koji konzumira bezalkoholni program', PARTY_PLANER_TEXT_DOMAIN ) . '</label>
 	                    </div>
 	                </div>
 	        

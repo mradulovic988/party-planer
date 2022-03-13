@@ -161,6 +161,11 @@ const total1 = 100;
 const values1 = new Array(els1.length).fill(40);
 els1.forEach((el, i) => el.value = values1[i].toFixed(2));
 
+// Re-calculate value of the fields
+document.querySelector('#ppBearInputId').value = 40;
+document.querySelector('#ppVineInputId').value = 35;
+document.querySelector('#ppStrongInputId').value = 25;
+
 /**
  * Check percentages on input fields
  *
