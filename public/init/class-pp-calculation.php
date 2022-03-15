@@ -110,14 +110,36 @@ if ( ! class_exists( 'PP_Calculation' ) ) {
 							<div class="pp-result-col pp-col-25">
 								<p class="pp-result-number">' . __( ceil( $beer_cons ) . 'l', PARTY_PLANER_TEXT_DOMAIN ) . '</p>
 								<span class="pp-result-number-description">' . __( 'Pivo', PARTY_PLANER_TEXT_DOMAIN ) . '</span>
+								<div class="pp-result-more-details-beer-wrapper">
+									<span class="pp-result-more-details-font pp-result-more-details-beer">' . __( 'Lager: ', PARTY_PLANER_TEXT_DOMAIN ) . '</span>
+									<span class="pp-result-more-details-font pp-result-more-details-beer">' . __( 'Pšenično:: ', PARTY_PLANER_TEXT_DOMAIN ) . '</span>
+									<span class="pp-result-more-details-font pp-result-more-details-beer">' . __( 'IPA: ', PARTY_PLANER_TEXT_DOMAIN ) . '</span>
+								</div>
+								<span class="pp-result-more-details-beer-btn">' . __( 'Detaljnije', PARTY_PLANER_TEXT_DOMAIN ) . '</span>
 							</div>
 							<div class="pp-result-col pp-col-25">
 								<p class="pp-result-number">' . __( ceil( $wine_cons ) . 'l', PARTY_PLANER_TEXT_DOMAIN ) . '</p>
 								<span class="pp-result-number-description">' . __( 'Vino', PARTY_PLANER_TEXT_DOMAIN ) . '</span>
+								<div class="pp-result-more-details-vine-wrapper">
+									<span class="pp-result-more-details-font pp-result-more-details-vine">' . __( 'Crveno: ', PARTY_PLANER_TEXT_DOMAIN ) . '</span>
+									<span class="pp-result-more-details-font pp-result-more-details-vine">' . __( 'Belo: ', PARTY_PLANER_TEXT_DOMAIN ) . '</span>
+									<span class="pp-result-more-details-font pp-result-more-details-vine">' . __( 'Rose: ', PARTY_PLANER_TEXT_DOMAIN ) . '</span>
+									<span class="pp-result-more-details-font pp-result-more-details-vine">' . __( 'Penušavo: ', PARTY_PLANER_TEXT_DOMAIN ) . '</span>
+								</div>
+								<span class="pp-result-more-details-vine-btn">' . __( 'Detaljnije', PARTY_PLANER_TEXT_DOMAIN ) . '</span>
 							</div>
 							<div class="pp-result-col pp-col-25">
 								<p class="pp-result-number">' . __( ceil( $strong_cons ) . 'l', PARTY_PLANER_TEXT_DOMAIN ) . '</p>
 								<span class="pp-result-number-description">' . __( 'Žestina', PARTY_PLANER_TEXT_DOMAIN ) . '</span>
+								<div class="pp-result-more-details-strong-wrapper">
+									<span class="pp-result-more-details-font pp-result-more-details-strong">' . __( 'Vodka: ', PARTY_PLANER_TEXT_DOMAIN ) . '</span>
+									<span class="pp-result-more-details-font pp-result-more-details-strong">' . __( 'Džin: ', PARTY_PLANER_TEXT_DOMAIN ) . '</span>
+									<span class="pp-result-more-details-font pp-result-more-details-strong">' . __( 'Viski: ', PARTY_PLANER_TEXT_DOMAIN ) . '</span>
+									<span class="pp-result-more-details-font pp-result-more-details-strong">' . __( 'Rakija: ', PARTY_PLANER_TEXT_DOMAIN ) . '</span>
+									<span class="pp-result-more-details-font pp-result-more-details-strong">' . __( 'Tekila: ', PARTY_PLANER_TEXT_DOMAIN ) . '</span>
+									<span class="pp-result-more-details-font pp-result-more-details-strong">' . __( 'Vermut: ', PARTY_PLANER_TEXT_DOMAIN ) . '</span>
+								</div>
+								<span class="pp-result-more-details-strong-btn">' . __( 'Detaljnije', PARTY_PLANER_TEXT_DOMAIN ) . '</span>
 							</div>
 							<div class="pp-result-col pp-col-25">
 								<p class="pp-result-number">' . __( ceil( $start_non_alc_point ) . 'l', PARTY_PLANER_TEXT_DOMAIN ) . '</p>

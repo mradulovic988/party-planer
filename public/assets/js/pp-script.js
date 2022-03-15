@@ -15,6 +15,12 @@ const data = {
         advSection: document.querySelector('.pp-advanced-section'),
         addInfoBtn: document.querySelector('#pp-information'),
         addInfoSection: document.querySelector('.pp-addition-information-wrapper'),
+        moreDetBtnBeer: document.querySelector('.pp-result-more-details-beer-btn'),
+        moreDetBtnVine: document.querySelector('.pp-result-more-details-vine-btn'),
+        moreDetBtnStrong: document.querySelector('.pp-result-more-details-strong-btn'),
+        moreDetSectionBeer: document.querySelector('.pp-result-more-details-beer-wrapper'),
+        moreDetSectionVine: document.querySelector('.pp-result-more-details-vine-wrapper'),
+        moreDetSectionStrong: document.querySelector('.pp-result-more-details-strong-wrapper')
     },
 
     /**
@@ -71,6 +77,27 @@ const toggleProcess = (b, s) => {
 }
 toggleProcess(data.toggle.advBtn, data.toggle.advSection);
 toggleProcess(data.toggle.addInfoBtn, data.toggle.addInfoSection);
+
+/**
+ * Simple toggle
+ *
+ * @param {Element} b Button element for click
+ * @param {Element} s Section for toggle
+ */
+const toggle = (b, s) => {
+    if (b) {
+        b.addEventListener('click', () => {
+            if (s.style.display === 'block') {
+                return s.style.display = 'none';
+            } else {
+                return s.style.display = 'block';
+            }
+        });
+    }
+}
+toggle(data.toggle.moreDetBtnBeer, data.toggle.moreDetSectionBeer);
+toggle(data.toggle.moreDetBtnVine, data.toggle.moreDetSectionVine);
+toggle(data.toggle.moreDetBtnStrong, data.toggle.moreDetSectionStrong);
 
 /**
  * Alert message for specific fields

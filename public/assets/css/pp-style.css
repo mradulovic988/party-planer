@@ -209,6 +209,22 @@ span.pp-result-number-description {
 table.pp-table tbody {
     display: inherit;
 }
+
+span.pp-result-more-details-beer-btn, span.pp-result-more-details-vine-btn, span.pp-result-more-details-strong-btn {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+span.pp-result-more-details-font {
+    display: block;
+}
+
+.pp-result-more-details-beer-wrapper, .pp-result-more-details-vine-wrapper, .pp-result-more-details-strong-wrapper {
+    display: none;
+}
 /* End Form result */
 
 input.pp-ranges {
